@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --quiet --config webpack.local.conf.js --host 0.0.0.0",
-    "build": "webpack  --config webpack.conf.js",
+    "build": "webpack -p --config webpack.conf.js",
     "test": "node node_modules/eslint/bin/eslint.js ./src"
   },
   "repository": {
