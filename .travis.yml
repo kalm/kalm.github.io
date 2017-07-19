@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- stable
+
+script: "npm run-script test && bash .scripts/deploy.sh"
+env:
+  global:
+  - ENCRYPTION_LABEL: "1fbd546a8ff1"
+  - COMMIT_AUTHOR_EMAIL: "fredericcharette@gmail.com"
+
+cache: yarn
