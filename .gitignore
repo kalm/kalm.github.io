@@ -63,3 +63,4 @@ typings/
 # Compiled components
 public/bundle.js
 out
+deploy_key
