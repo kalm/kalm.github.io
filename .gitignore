@@ -57,3 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# VS Code stuff
+.vscode
+
+# Compiled components
+public/bundle.js

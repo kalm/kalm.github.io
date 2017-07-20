@@ -5,7 +5,7 @@
 
 /* Imports -------------------------------------------------------------------*/
 
-import Inferno from 'inferno';
+import Inferno from 'inferno'; // eslint-disable-line
 import Component from 'inferno-component';
 
 /* Local variables -----------------------------------------------------------*/
@@ -14,7 +14,7 @@ const version = '^3.0.0';
 
 /* Component -----------------------------------------------------------------*/
 
-class VersionComponent extends Component {
+class ExampleComponent extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -35,4 +35,4 @@ class VersionComponent extends Component {
 
 /* Exports -------------------------------------------------------------------*/ 
 
-export default VersionComponent;
+export default ExampleComponent;
