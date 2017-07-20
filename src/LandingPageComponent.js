@@ -1,19 +1,20 @@
 /**
- * Header component
- * - Displays site header
+ * Version component
+ * - Displays the version number
  */
 
 /* Imports -------------------------------------------------------------------*/
 
 import Inferno from 'inferno';
 import Component from 'inferno-component';
+import VideoComponent from './VideoComponent';
+import CodeComponent from './CodeComponent';
 
 /* Local variables -----------------------------------------------------------*/
 
-
 /* Component -----------------------------------------------------------------*/
 
-class HeaderComponent extends Component {
+class LandingPageComponent extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -22,11 +23,8 @@ class HeaderComponent extends Component {
 	render() {
 		return (
 			<div>
-				<div>
-
-					<iframe style="background-color: red; padding: 20px;" width="560" height="315" src="https://www.youtube.com/embed/tHbCkikFfDE" frameborder="0" allowfullscreen></iframe>
-			
-				</div>
+				<VideoComponent />
+				<CodeComponent />
 			</div>
 		);
 	}
@@ -34,4 +32,4 @@ class HeaderComponent extends Component {
 
 /* Exports -------------------------------------------------------------------*/
 
-export default HeaderComponent;
+export default LandingPageComponent;
