@@ -20,21 +20,24 @@ REPO=`git config remote.origin.url`
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
 
-# Clone the existing gh-pages for this repo into public/
+# Clone the existing gh-pages for this repo into out/
 # Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
-git clone $REPO public
-cd public
+git clone $REPO out
+cd out
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ..
 
 # Clean out existing contents
-rm -rf public/**/* || exit 0
+rm -rf out/**/* || exit 0
 
 # Run our compile script
 doCompile
 
+# Copy our other static content to the out repo
+cp ./public/ ./out/
+
 # Now let's go have some fun with the cloned repo
-cd public
+cd out
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 

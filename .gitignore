@@ -62,3 +62,4 @@ typings/
 
 # Compiled components
 public/bundle.js
+out
