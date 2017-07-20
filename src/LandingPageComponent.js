@@ -7,32 +7,30 @@
 
 import Inferno from 'inferno';
 import Component from 'inferno-component';
+import VideoComponent from './VideoComponent';
+import VideoComponentV2 from './VideoComponentV2';
+import CodeComponent from './CodeComponent';
 
 /* Local variables -----------------------------------------------------------*/
 
-const version = '^3.0.0';
-
 /* Component -----------------------------------------------------------------*/
 
-class VersionComponent extends Component {
+class LandingPageComponent extends Component {
 	constructor(props) {
 		super(props);
 	}
 
-	showVersion() {
-		alert(`The version is: ${ version }!`);
-	}
 
 	render() {
 		return (
 			<div>
-				<p>This is an Inferno Boilerplate example using <em>Inferno { version }</em>.</p>
-				<button onClick={ this.showVersion }>Show version</button>
+				<VideoComponentV2 />
+				<CodeComponent />
 			</div>
 		);
 	}
 }
 
-/* Exports -------------------------------------------------------------------*/ 
+/* Exports -------------------------------------------------------------------*/
 
-export default VersionComponent;
+export default LandingPageComponent;
