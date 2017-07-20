@@ -41,6 +41,15 @@ cd out
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
+# Remove stuff we dont need for the website
+rm -rf .babelrc
+rm -rf .eslintrc
+rm -rf .travis.yml
+rm -rf deploy_key
+rm -rf webpack.conf.js
+rm -rf webpack.local.conf.js
+rm -rf yarn.lock
+
 # If there are no changes to the compiled public (e.g. this is a README update) then just bail.
 if git diff --quiet; then
     echo "No changes to the output on this push; exiting."
