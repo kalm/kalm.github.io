@@ -8,6 +8,7 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import VideoComponent from './VideoComponent';
+import VideoComponentV2 from './VideoComponentV2';
 import CodeComponent from './CodeComponent';
 
 /* Local variables -----------------------------------------------------------*/
@@ -23,7 +24,7 @@ class LandingPageComponent extends Component {
 	render() {
 		return (
 			<div>
-				<VideoComponent />
+				<VideoComponentV2 />
 				<CodeComponent />
 			</div>
 		);
