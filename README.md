@@ -1,6 +1,6 @@
 # Kalm Website
 
-* Developed as part of a learning program with [Les Pitonneux](pitonneux.com) *
+* Developed as part of a learning program with [Les Pitonneux](http://www.lab12.ca/) *
 
 Based on [trueadm's Inferno boilerplate](https://github.com/trueadm/inferno-boilerplate)
 

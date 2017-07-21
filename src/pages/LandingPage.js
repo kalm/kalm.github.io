@@ -8,14 +8,18 @@
 import Inferno from 'inferno'; // eslint-disable-line
 
 import ExampleComponent from '../components/ExampleComponent';
+import VideoComponent from '../components/VideoComponent';
+import VideoComponentV2 from '../components/VideoComponentV2';
+import CodeComponent from '../components/CodeComponent';
 
 /* Exports -------------------------------------------------------------------*/
 
 export default function LandingPage() {
 	return (
 		<div>
-			<h1>Landing Page</h1>
-			<ExampleComponent></ExampleComponent>
+			<VideoComponent />
+			<VideoComponentV2 />
+			<CodeComponent />
 		</div>
 	);
 }
