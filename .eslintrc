@@ -19,7 +19,8 @@
     "quotes": [2, "single"],
     "indent": [2, "tab"],
     "react/react-in-jsx-scope": 0,
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "jsx-quotes": [2, "prefer-double"]
   },
   "env": {
     "es6": true,
