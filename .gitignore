@@ -64,3 +64,6 @@ typings/
 public/bundle.js
 out
 deploy_key
+
+### macOS ###
+*.DS_Store
