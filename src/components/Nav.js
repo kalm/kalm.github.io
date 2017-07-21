@@ -1,6 +1,6 @@
 /**
- * Version component
- * - Displays the version number
+ * Nav component
+ * This is the menu and the search bar
  */
 
 /* Imports -------------------------------------------------------------------*/
