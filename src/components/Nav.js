@@ -41,7 +41,7 @@ class VersionComponent extends Component {
 							<a class="nav-link" href="#">Documentation</a>
 						</li>
 						<li class="nav-item">
-						<a class="nav-link" href="#">Disabled</a>
+						<a class="nav-link" href="#">Getting started</a>
 						</li>
 					</ul>
 					<form class="form-inline my-2 my-lg-0">
