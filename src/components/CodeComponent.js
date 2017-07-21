@@ -17,20 +17,20 @@ class CodeComponent extends Component {
 	render() {
 		return (
 			<div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6">
               <h4>Setting up your server</h4>
 
-              <pre class="well">
+              <pre className="well">
                 <code>
-                <span class="highlight-1">{`const`}</span> <span class="highlight-2">{`Kalm`}</span>{` = `}<span class="highlight-1">{`require`}</span>{`('kalm');`}
+                <span className="highlight-1">{`const`}</span> <span className="highlight-2">{`Kalm`}</span>{` = `}<span className="highlight-1">{`require`}</span>{`('kalm');`}
                 <br />
-                <span class="highlight-1">{`const`}</span> <span class="highlight-2">{`ws`}</span>{` = `}<span class="highlight-1">{`require`}</span>{`('kalm-websocket');`}
+                <span className="highlight-1">{`const`}</span> <span className="highlight-2">{`ws`}</span>{` = `}<span className="highlight-1">{`require`}</span>{`('kalm-websocket');`}
                 <br />
                 <br />
-                <span class="highlight-1">{`const`}</span> <span class="highlight-2">{`server`}</span>{` = Kalm.`}<span class="highlight-3">{`listen`}</span>{`({ `}{`
-  port: `}<span class="highlight-1">{`3000`}</span>{`,
+                <span className="highlight-1">{`const`}</span> <span className="highlight-2">{`server`}</span>{` = Kalm.`}<span className="highlight-3">{`listen`}</span>{`({ `}{`
+  port: `}<span className="highlight-1">{`3000`}</span>{`,
   transport: ws
 });
 

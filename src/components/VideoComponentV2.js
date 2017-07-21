@@ -17,22 +17,19 @@ class VideoComponentV2 extends Component {
 	render() {
 		return (
 			<div>
-				<div class="jumbotron">
-					<div class="container">
-						<div class="row align-items-center">
-							<div class="col-md-6 text-center">
-								<button type="button" class="btn-player hidden-sm-down" data-toggle="modal" data-target="#exampleModal">
+				<div classNameName="jumbotron">
+					<div className="container">
+						<div className="row align-items-center">
+							<div className="col-md-6 text-center">
+								<button type="button" className="btn-player hidden-sm-down" data-toggle="modal" data-target="#exampleModal">
 									<img src="http://kalm.js.org/src/images/logo.png" />
 								</button>
 							</div>
-
-							<div class="col-md-6">
+							<div className="col-md-6">
 								<h1>Kalm <br /><small>The socket manager</small></h1>
-
 								<p>Stabilization and optimization of Network communications in high debit applications</p>
-
-								<div class="text-center">
-									<button type="button" class="btn btn-primary hidden-md-up" data-toggle="modal" data-target="#exampleModal">
+								<div className="text-center">
+									<button type="button" className="btn btn-primary hidden-md-up" data-toggle="modal" data-target="#exampleModal">
 										Kalm demo
 									</button>
 								</div>
@@ -40,22 +37,20 @@ class VideoComponentV2 extends Component {
 						</div>
 					</div>
 				</div>
-
-				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				  <div class="modal-dialog" role="document">
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <h5 class="modal-title" id="exampleModalLabel">Kalm demo</h5>
-				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div className="modal-dialog" role="document">
+				    <div className="modal-content">
+				      <div className="modal-header">
+				        <h5 className="modal-title" id="exampleModalLabel">Kalm demo</h5>
+				        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
 				          <span aria-hidden="true">&times;</span>
 				        </button>
 				      </div>
-				      <div class="modal-body">
-								<div class="embed-responsive embed-responsive-16by9">
-									<iframe src="https://www.youtube.com/embed/tHbCkikFfDE" allowfullscreen></iframe>
+				      <div className="modal-body">
+								<div className="embed-responsive embed-responsive-16by9">
+									<iframe src="https://www.youtube.com/embed/tHbCkikFfDE" allowFullScreen></iframe>
 								</div>
 				      </div>
-
 				    </div>
 				  </div>
 				</div>
