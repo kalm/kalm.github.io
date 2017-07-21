@@ -2,10 +2,6 @@
 
 import Inferno from 'inferno';
 import Component from 'inferno-component';
-// import img from 'kalm-logo.png';
-
-/* Local variables -----------------------------------------------------------*/
-
 
 /* Component -----------------------------------------------------------------*/
 
@@ -21,10 +17,7 @@ class VideoComponent extends Component {
 					<div className="container">
 						<div className="row">
 							<div className="col-md-6 offset-md-3 text-center">
-								<img src="http://kalm.js.org/src/images/logo.png" />
-
-								<br />
-								<br />
+								<img className="mb-4" src="images/kalm-logo.png" />
 
 								<h1>Kalm <br /><small>The socket manager</small></h1>
 
@@ -52,7 +45,6 @@ class VideoComponent extends Component {
 									<iframe src="https://www.youtube.com/embed/tHbCkikFfDE" allowFullScreen></iframe>
 								</div>
 				      </div>
-
 				    </div>
 				  </div>
 				</div>

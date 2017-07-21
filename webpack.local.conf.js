@@ -20,13 +20,6 @@ module.exports = {
 		noInfo: false,
 		hot: true,
 		inline: true,
-		// proxy: {
-		// 	'/': {
-		// 		bypass: function (req, res, proxyOptions) {
-		// 			return '/public/index.html';
-		// 		}
-		// 	}
-		// }
 	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin()
