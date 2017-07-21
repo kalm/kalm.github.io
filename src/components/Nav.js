@@ -50,7 +50,7 @@ class VersionComponent extends Component {
 					</form>
 				</div>
 			</nav>
-		</div><!--end of header container-->
+		</div>
 		);
 	}
 }

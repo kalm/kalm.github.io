@@ -26,14 +26,15 @@ class VersionComponent extends Component {
 	render() {
 		return (
 			<div class="container">
-			<footer class="footer">
-			<h4>Copyrights © 2017 All Rights Reserved by Kalm</h4>
-			<div id="footer-contact">
-				<ul class="contact">
-					<li><a href="#"><img src="./image/github.png"></a></li>
-				</ul>
-			</div><!--end of banner-contact-->
-		</footer>
+				<footer class="footer">
+					<h4>Copyrights © 2017 All Rights Reserved by Kalm</h4>
+					<div id="footer-contact">
+					<ul class="contact">
+						<li><a href="#"><img src="./image/github.png"></a></li>
+					</ul>
+					</div>
+				</footer>
+			</div>	
 		);
 	}
 }
