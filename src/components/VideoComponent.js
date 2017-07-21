@@ -1,6 +1,6 @@
 /* Imports -------------------------------------------------------------------*/
 
-import Inferno from 'inferno';
+import Inferno from 'inferno'; // eslint-disable-line
 import Component from 'inferno-component';
 
 /* Component -----------------------------------------------------------------*/
@@ -24,7 +24,7 @@ class VideoComponent extends Component {
 								<p>Stabilization and optimization of Network communications in high debit applications</p>
 
 								<button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-								 	Kalm demo
+								Kalm demo
 								</button>
 							</div>
 						</div>
@@ -32,21 +32,21 @@ class VideoComponent extends Component {
 				</div>
 
 				<div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				  <div className="modal-dialog" role="document">
-				    <div className="modal-content">
-				      <div className="modal-header">
-				        <h5 className="modal-title" id="exampleModalLabel">Kalm demo</h5>
-				        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-				          <span aria-hidden="true">&times;</span>
-				        </button>
-				      </div>
-				      <div className="modal-body">
+					<div className="modal-dialog" role="document">
+						<div className="modal-content">
+							<div className="modal-header">
+								<h5 className="modal-title" id="exampleModalLabel">Kalm demo</h5>
+								<button type="button" className="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div className="modal-body">
 								<div className="embed-responsive embed-responsive-16by9">
 									<iframe src="https://www.youtube.com/embed/tHbCkikFfDE" allowFullScreen></iframe>
 								</div>
-				      </div>
-				    </div>
-				  </div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		);

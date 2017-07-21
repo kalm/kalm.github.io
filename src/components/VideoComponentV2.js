@@ -1,6 +1,6 @@
 /* Imports -------------------------------------------------------------------*/
 
-import Inferno from 'inferno';
+import Inferno from 'inferno'; // eslint-disable-line
 import Component from 'inferno-component';
 
 /* Component -----------------------------------------------------------------*/
@@ -18,7 +18,7 @@ class VideoComponentV2 extends Component {
 						<div className="row align-items-center">
 							<div className="col-md-6 text-center">
 								<button type="button" className="btn-player hidden-sm-down" data-toggle="modal" data-target="#exampleModal">
-									<img src="http://kalm.js.org/src/images/logo.png" />
+									<img src="images/kalm-logo.png" />
 								</button>
 							</div>
 							<div className="col-md-6">
@@ -34,21 +34,21 @@ class VideoComponentV2 extends Component {
 					</div>
 				</div>
 				<div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				  <div className="modal-dialog" role="document">
-				    <div className="modal-content">
-				      <div className="modal-header">
-				        <h5 className="modal-title" id="exampleModalLabel">Kalm demo</h5>
-				        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-				          <span aria-hidden="true">&times;</span>
-				        </button>
-				      </div>
-				      <div className="modal-body">
+					<div className="modal-dialog" role="document">
+						<div className="modal-content">
+							<div className="modal-header">
+								<h5 className="modal-title" id="exampleModalLabel">Kalm demo</h5>
+								<button type="button" className="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div className="modal-body">
 								<div className="embed-responsive embed-responsive-16by9">
 									<iframe src="https://www.youtube.com/embed/tHbCkikFfDE" allowFullScreen></iframe>
 								</div>
-				      </div>
-				    </div>
-				  </div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		);
