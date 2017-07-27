@@ -8,27 +8,19 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 
-/* Local variables -----------------------------------------------------------*/
 
-const version = '^3.0.0';
 
 /* Component -----------------------------------------------------------------*/
 
-class VersionComponent extends Component {
-	constructor(props) {
-		super(props);
-	}
-
-	showVersion() {
-		alert(`The version is: ${ version }!`);
-	}
+class Features extends Component {
+	
 
 	render() {
 		return (
 			<div class="container features">
 			<div class="row">
 				<div class="col-lg-6">
-					<img class="rounded-circle feature-img" src="./image/optimize.png" alt="Generic placeholder image">
+					<img class="rounded-circle feature-img" src="./image/optimize.png" alt="Generic placeholder image" />
 
 					<ul>
 						<h3>Network Optimizations</h3>
@@ -38,7 +30,7 @@ class VersionComponent extends Component {
 					</ul>
 				</div>
 				<div class="col-lg-6">
-					<img class="rounded-circle feature-img" src="./image/use.png" alt="Generic placeholder image">
+					<img class="rounded-circle feature-img" src="./image/use.png" alt="Generic placeholder image" />
 
 					<ul>
 						<h3>Simple usage</h3>
@@ -48,7 +40,7 @@ class VersionComponent extends Component {
 					</ul>
 				</div>
 				<div class="col-lg-6">
-					<img class="rounded-circle feature-img" src="./image/perform.png" alt="Generic placeholder image" >
+					<img class="rounded-circle feature-img" src="./image/perform.png" alt="Generic placeholder image" />
 
 					<ul>
 						<h3>Performances</h3>
@@ -58,7 +50,7 @@ class VersionComponent extends Component {
 					</ul>
 				</div>
 				<div class="col-lg-6">
-					<img class="rounded-circle feature-img" src="./image/pressure.png" alt="Generic placeholder image">
+					<img class="rounded-circle feature-img" src="./image/pressure.png" alt="Generic placeholder image" />
 
 					<ul>
 						<h3>Hardware pressure</h3>
@@ -75,4 +67,4 @@ class VersionComponent extends Component {
 
 /* Exports -------------------------------------------------------------------*/ 
 
-export default VersionComponent;
+export default Features;
