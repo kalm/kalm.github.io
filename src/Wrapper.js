@@ -3,6 +3,7 @@
  */
 
 /* Imports -------------------------------------------------------------------*/
+
 import Inferno from 'inferno'; // eslint-disable-line
 
 // Importing SASS
