@@ -5,6 +5,7 @@
 /* Imports -------------------------------------------------------------------*/
 
 import Inferno from 'inferno'; // eslint-disable-line
+require('./assets/scss/style.scss');
 
 /* Exports -------------------------------------------------------------------*/
 

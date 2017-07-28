@@ -13,10 +13,14 @@ module.exports = {
 			{
 				test: /\.js$/,
 				loader: 'babel-loader'
-			}
+			},
+			{
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
+    	}
 		]
 	},
-	devServer: {	
+	devServer: {
 		contentBase: './public',
 		port: 8080,
 		noInfo: false,
