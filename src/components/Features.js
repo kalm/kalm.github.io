@@ -7,6 +7,7 @@
 
 import Inferno from 'inferno';
 import Component from 'inferno-component';
+import style from 'style.js';
 
 /* Component -----------------------------------------------------------------*/
 
