@@ -1,14 +1,11 @@
 // Colors
-@import "./variables"; // eslint-disable-line
+@import "./variables";
 
 // Components
-@import "./components/videoComponent"; // eslint-disable-line
-@import "./components/codeComponent"; // eslint-disable-line
-
+@import "./components/videoComponent";
+@import "./components/codeComponent";
 // Pages
-@import "./pages/landingPage"; // eslint-disable-line
-
-
+@import "./pages/landingPage";
 
 
 //******* Don't add style here. Instead create a component or page.
