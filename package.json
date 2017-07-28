@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --quiet --config webpack.local.conf.js --host 0.0.0.0",
     "build": "webpack -p --config webpack.conf.js",
-    "test": "node node_modules/eslint/bin/eslint.js ./src --ext js"
+    "test": "node node_modules/eslint/bin/eslint.js ./src"
   },
   "repository": {
     "type": "git",
@@ -35,7 +35,7 @@
     "babel-preset-stage-0": "^6.3.13",
     "eslint": "^4.2.0",
     "eslint-plugin-react": "^7.0.0",
-    "webpack": "^3.0.0",
+    "webpack": "3.1.0",
     "webpack-dev-server": "^2.5.1"
   },
   "dependencies": {
