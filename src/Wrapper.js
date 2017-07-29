@@ -7,7 +7,7 @@
 import Inferno from 'inferno'; // eslint-disable-line
 
 // Importing SASS
-// require('./assets/scss/style.scss');
+require('./assets/scss/style.scss');
 
 /* Exports -------------------------------------------------------------------*/
 
