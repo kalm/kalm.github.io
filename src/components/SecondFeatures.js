@@ -26,14 +26,15 @@ class SecondFeatures extends Component {
 						<img className="rounded-circle feat-img-1" src="./image/optimize.png" alt="Generic placeholder image" />
 					</div>
 					<div className="col-lg-6 select2">
-          				<img className = "rounded-circle feat-img-2" src="./image/simple.png" alt="Generic placeholder image" />
+						<img className = "rounded-circle feat-img-2" src="./image/simple.png" alt="Generic placeholder image" />
 						<ul>
 							<h3>Simple usage</h3>
 							<li> Intuitive single syntax for all protocols</li>
 							<li> Feature parity for all protocols for multiplexing</li>
 							<li> Stats and monitoring-enabled</li>
-				        </ul>
-        			</div>
+						</ul>
+					</div>
+
 					<div className="col-lg-6 select3">						
 						<ul>
 							<h3>Performances</h3>
