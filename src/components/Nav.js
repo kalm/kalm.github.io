@@ -2,7 +2,6 @@
  * Nav component
  * This is the menu and the search bar
  */
-
 /* Imports -------------------------------------------------------------------*/
 
 import Inferno from 'inferno'; // eslint-disable-line
@@ -27,10 +26,10 @@ class Navbar extends Component {
 								<a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
 							</li>
 							<li className="nav-item">
-							<a className="nav-link" href="#">Documentation</a>
+								<a className="nav-link" href="#">Documentation</a>
 							</li>
 							<li className="nav-item">
-							<a className="nav-link" href="#">Getting started</a>
+								<a className="nav-link" href="#">Getting started</a>
 							</li>
 						</ul>
 						<form className="form-inline my-2 my-lg-0">
