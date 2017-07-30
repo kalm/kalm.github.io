@@ -17,7 +17,7 @@ class VideoComponent extends Component {
 					<div className="container">
 						<div className="row">
 							<div className="col-md-12 text-center">
-								<img src="images/kalm-logo.png" class="mb-4" />
+								<img src="images/kalm-logo.png" className="mb-4" />
 
 								<h1>Kalm <br /><small>The socket manager</small></h1>
 
