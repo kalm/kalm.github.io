@@ -68,12 +68,12 @@
 //   //   // background: -moz-linear-gradient(bottom left, black, grey); /* For Firefox 3.6 to 15 */
 //   //   background: linear-gradient(-10deg, #0b1840 10%, #3f93dc 40%, #009688 30%, white); /* Standard syntax (must be last) */
 // }
-
-.main-image {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-   url("images/kalm-logo.png") no-repeat center center fixed;
-  background-size: cover;
-}
+// 
+// .main-image {
+//   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+//    url("images/kalm-logo.png") no-repeat center center fixed;
+//   background-size: cover;
+// }
 
 
 .image:after {
