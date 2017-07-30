@@ -3,6 +3,7 @@
 import Inferno from 'inferno'; // eslint-disable-line
 import Component from 'inferno-component';
 
+
 /* Component -----------------------------------------------------------------*/
 
 class CodeComponent extends Component {
@@ -16,7 +17,6 @@ class CodeComponent extends Component {
 				<div className="container">
 					<div className="row">
 						<div className="col-md-6">
-							<h4>Setting up your server</h4>
 
 							<pre className="well">
 								<code>
