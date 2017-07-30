@@ -13,11 +13,10 @@ class VideoComponent extends Component {
 	render() {
 		return (
 			<div>
-				<div className="jumbotron">
-					<div className="container pt-3">
+				<div className="main-image my-5">
+					<div className="container mt-5 pt-5">
 						<div className="row">
-							<div className="col-md-6 offset-md-3 text-center">
-								<img className="mb-4" src="images/kalm-logo.png" />
+							<div className="col-md-6 text-center">
 
 								<h1>Kalm <br /><small>The socket manager</small></h1>
 
@@ -26,6 +25,10 @@ class VideoComponent extends Component {
 								<button type="button" className="btn btn-primary btn-demo" data-toggle="modal" data-target="#exampleModal">
 								Kalm demo
 								</button>
+							</div>
+
+							<div className="col-md-6 text-center">
+								
 							</div>
 						</div>
 					</div>
