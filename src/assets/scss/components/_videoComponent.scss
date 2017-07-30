@@ -1,0 +1,59 @@
+.btn-player {
+  position: relative;
+  border: none;
+  padding: 30px 90px;
+  background-color: transparent;
+  transition: padding .5s;
+}
+
+.btn-player:hover,
+.btn-player:focus {
+  cursor: pointer;
+  padding: 30px 95px;
+}
+.btn-player:hover:before,
+.btn-player:focus:before {
+  background-color: rgba(0,0,0,.3);
+}
+
+.btn-player:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content:"";
+  background-color: rgba(0,0,0,.2);
+  border-radius: 20px;
+  transition: background-color .5s;
+}
+
+.btn-player:after {
+  position: absolute;
+  display: block;
+  top: 40%;
+  left: 45%;
+  width: 0;
+  height: 0;
+  border: 30px solid transparent;
+  border-left-color: rgba(255, 255, 255, 0.55);
+  content:"";
+}
+
+.btn-demo {
+	font-size: 19px;
+	line-height: 15px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	color: #ffffff;
+	padding-left: 18px;
+	padding-right: 18px;
+	border-radius: 4px;
+	border: 0px;
+	background: $btn-blue;
+	margin: 12px;
+	margin-left: 16px;
+	height: 48px;
+	white-space: nowrap;
+}
