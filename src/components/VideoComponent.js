@@ -23,7 +23,7 @@ class VideoComponent extends Component {
 
 								<p>Stabilization and optimization of Network communications in high debit applications</p>
 
-								<button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+								<button type="button" className="btn btn-primary btn-demo" data-toggle="modal" data-target="#exampleModal">
 								Kalm demo
 								</button>
 							</div>
