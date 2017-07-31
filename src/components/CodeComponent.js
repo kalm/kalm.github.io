@@ -13,7 +13,7 @@ class CodeComponent extends Component {
 	render() {
 		return (
 			<div>
-				<div className="container">
+				<div className="container pt-5">
 					<div className="row">
 						<div className="col-md-6">
 							<h4>Setting up your server</h4>
