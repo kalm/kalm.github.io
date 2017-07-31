@@ -1,3 +1,43 @@
+.img-bg-header {
+	background: url("../../../public/images/header-background.png") center center fixed;
+	min-height: 600px;
+	// height: 100vh;
+}
+
+.btn-custom {
+	border-radius: 50px;
+  background: transparent;
+  padding: 20px 30px;
+  min-width: 170px;
+  border: 2px solid #fff;
+  font-size: 14px;
+	font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #fff;
+
+	&:hover,
+	&:focus {
+		background-color: #fff;
+		color: #0e426d;
+	}
+}
+
+.title {
+	font-size: 65px;
+	font-weight: 600;
+	margin: 0;
+	line-height: 70px;
+}
+
+.sub-title {
+	font-size: 24px;
+  font-weight: 300;
+  margin: 20px 0 30px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+// VIDEO COMPONENT VERSION 2
 .btn-player {
   position: relative;
   border: none;
@@ -56,37 +96,4 @@
 	margin-left: 16px;
 	height: 48px;
 	white-space: nowrap;
-}
-
-// .image {
-// 	background-image: url(./images/green.jpg);
-// 	// position: relative;
-// 	// border-radius: 0;
-//   //   background: black; /* For browsers that do not support gradients */
-//   //   // background: -webkit-linear-gradient(right top, black, grey); /* For Safari 5.1 to 6.0 */
-//   //   // background: -o-linear-gradient(bottom left, black, grey); /* For Opera 11.1 to 12.0 */
-//   //   // background: -moz-linear-gradient(bottom left, black, grey); /* For Firefox 3.6 to 15 */
-//   //   background: linear-gradient(-10deg, #0b1840 10%, #3f93dc 40%, #009688 30%, white); /* Standard syntax (must be last) */
-// }
-// 
-// .main-image {
-//   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-//    url("images/kalm-logo.png") no-repeat center center fixed;
-//   background-size: cover;
-// }
-
-
-.image:after {
-	// position: absolute;
-	// display: block;
-	// height: 150px;
-  // top: 400px;
-  // right: 0;
-  // bottom: 0;
-  // left: 0;
-	// z-index: -10;
-  // content:"";
-	// background: linear-gradient(-10deg, #0b1840 10%, #3f93dc 40%, #009688 30%, white);
-	// transform: skewY(3deg);
-
 }

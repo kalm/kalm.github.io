@@ -16,7 +16,6 @@ export default function LandingPage() {
 	return (
 		<div>
 			<VideoComponent />
-			<VideoComponentV2 />
 			<CodeComponent />
 		</div>
 	);
