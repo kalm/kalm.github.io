@@ -7,7 +7,7 @@
 
 import Inferno from 'inferno'; // eslint-disable-line
 import Component from 'inferno-component';
-import './style.css';
+// import './style.css';
 
 /* Component -----------------------------------------------------------------*/
 
@@ -17,7 +17,7 @@ class Features extends Component {
 			<div className="container features">
 				<div className="row">
 					<div className="col-lg-6">
-						<img className="rounded-circle feature-img" src="./image/optimize.png" alt="Generic placeholder image" />
+						<img className="rounded-circle feature-img" src="../assets/image/optimize.png" alt="Generic placeholder image" />
 						<ul>
 							<h3>Network Optimizations</h3>
 							<li>- Scaling is more predictable</li>

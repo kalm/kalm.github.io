@@ -9,7 +9,7 @@ import Inferno from 'inferno'; // eslint-disable-line
 import VideoComponent from '../components/VideoComponent';
 import VideoComponentV2 from '../components/VideoComponentV2';
 import CodeComponent from '../components/CodeComponent';
-
+import Features from '../components/Features';
 /* Exports -------------------------------------------------------------------*/
 
 export default function LandingPage() {
@@ -18,6 +18,7 @@ export default function LandingPage() {
 			<VideoComponent />
 			<VideoComponentV2 />
 			<CodeComponent />
+			<Features />
 		</div>
 	);
 }

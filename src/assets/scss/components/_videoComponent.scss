@@ -1,0 +1,92 @@
+.btn-player {
+  position: relative;
+  border: none;
+  padding: 30px 90px;
+  background-color: transparent;
+  transition: padding .5s;
+}
+
+.btn-player:hover,
+.btn-player:focus {
+  cursor: pointer;
+  padding: 30px 95px;
+}
+.btn-player:hover:before,
+.btn-player:focus:before {
+  background-color: rgba(0,0,0,.3);
+}
+
+.btn-player:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content:"";
+  background-color: rgba(0,0,0,.2);
+  border-radius: 20px;
+  transition: background-color .5s;
+}
+
+.btn-player:after {
+  position: absolute;
+  display: block;
+  top: 40%;
+  left: 45%;
+  width: 0;
+  height: 0;
+  border: 30px solid transparent;
+  border-left-color: rgba(255, 255, 255, 0.55);
+  content:"";
+}
+
+.btn-demo {
+	font-size: 19px;
+	line-height: 15px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	color: #ffffff;
+	padding-left: 18px;
+	padding-right: 18px;
+	border-radius: 4px;
+	border: 0px;
+	background: $btn-blue;
+	margin: 12px;
+	margin-left: 16px;
+	height: 48px;
+	white-space: nowrap;
+}
+
+// .image {
+// 	background-image: url(./images/green.jpg);
+// 	// position: relative;
+// 	// border-radius: 0;
+//   //   background: black; /* For browsers that do not support gradients */
+//   //   // background: -webkit-linear-gradient(right top, black, grey); /* For Safari 5.1 to 6.0 */
+//   //   // background: -o-linear-gradient(bottom left, black, grey); /* For Opera 11.1 to 12.0 */
+//   //   // background: -moz-linear-gradient(bottom left, black, grey); /* For Firefox 3.6 to 15 */
+//   //   background: linear-gradient(-10deg, #0b1840 10%, #3f93dc 40%, #009688 30%, white); /* Standard syntax (must be last) */
+// }
+// 
+// .main-image {
+//   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+//    url("images/kalm-logo.png") no-repeat center center fixed;
+//   background-size: cover;
+// }
+
+
+.image:after {
+	// position: absolute;
+	// display: block;
+	// height: 150px;
+  // top: 400px;
+  // right: 0;
+  // bottom: 0;
+  // left: 0;
+	// z-index: -10;
+  // content:"";
+	// background: linear-gradient(-10deg, #0b1840 10%, #3f93dc 40%, #009688 30%, white);
+	// transform: skewY(3deg);
+
+}

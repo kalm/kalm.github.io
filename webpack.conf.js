@@ -6,9 +6,15 @@ module.exports = {
 		filename: 'out/bundle.js',
 	},
 	module: {
-		loaders: [{
+		loaders: [
+			{
 			test: /\.js$/,
 			loader: 'babel-loader'
-		}]
+			},
+			{
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
+    	}
+			]
     }
 };

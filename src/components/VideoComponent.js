@@ -16,14 +16,14 @@ class VideoComponent extends Component {
 				<div className="jumbotron">
 					<div className="container">
 						<div className="row">
-							<div className="col-md-6 offset-md-3 text-center">
-								<img className="mb-4" src="images/kalm-logo.png" />
+							<div className="col-md-12 text-center">
+								<img src="images/kalm-logo.png" className="mb-4" />
 
 								<h1>Kalm <br /><small>The socket manager</small></h1>
 
 								<p>Stabilization and optimization of Network communications in high debit applications</p>
 
-								<button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+								<button type="button" className="btn btn-primary btn-demo" data-toggle="modal" data-target="#exampleModal">
 								Kalm demo
 								</button>
 							</div>
