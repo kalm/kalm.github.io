@@ -1,7 +1,8 @@
 .img-bg-header {
-	background: url("../../../public/images/header-background.png") center center fixed;
-	min-height: 600px;
-	// height: 100vh;
+	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../../../public/images/bg-header.jpg") center center;
+	background-size: 150%;
+	max-height: 800px;
+	height: 100vh;
 }
 
 .btn-custom {
@@ -24,7 +25,7 @@
 }
 
 .title {
-	font-size: 65px;
+	font-size: 50px;
 	font-weight: 600;
 	margin: 0;
 	line-height: 70px;
