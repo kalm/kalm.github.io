@@ -3,41 +3,7 @@
 	z-index: 1;
 	font-family: 'Comfortaa', cursive;
 }
-.navbar{
-	background: #f4f4f4;
-}
-.nav-item {
-	color: #1782ce;
-}
-.logo{
-	width: 50px;
-	height: 50px;
-}
-.features ul{
-	position: relative;
-	top: 20px;
-	left: 40px;
-}
-.features{
-	margin: auto;	
-}
-.features li{
-	list-style: none;
-	line-height: 1.6;
-}
-.features li:last-child{
-	margin-left: 63px;
-	margin-bottom: 60px;
-}
-.feature-img{
-	float: left;
-	clear: both;
-	margin-right: 40px;
-}
-.feature-img{
-	position: relative;
-	left: 40px;
-}
+
 /*DESIGN FOR SELECT-1************************/
 .select1{
 	margin-bottom: 15px;
@@ -146,22 +112,4 @@
 	border-radius: 10px;
 	float: left;
 	margin: 27px 40px 5px 10px;
-}
-footer{
-	z-index: 3;
-	background: #f4f4f4;
-	height: 60px;
-	color:#1782ce;
-	text-align: center;
-	padding-top: 15px;
-	overflow-y: hidden;
-}
-#footer-contact{
-	text-align: right;
-	margin-top: -35px;
-}
-.contact li{
-	display: inline;
-	list-style: none;
-	padding: 5px;	
 }

@@ -1,13 +1,13 @@
 /**
  * Footer component
- * This is the footer with the Github link
+ * This is the footer with the Github link,
+ * and the copyright
  */
 
 /* Imports -------------------------------------------------------------------*/
 
 import Inferno from 'inferno'; // eslint-disable-line
 import Component from 'inferno-component';
-// import style from 'style.js';
 
 /* Component -----------------------------------------------------------------*/
 

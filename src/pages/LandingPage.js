@@ -10,6 +10,9 @@ import VideoComponent from '../components/VideoComponent';
 import VideoComponentV2 from '../components/VideoComponentV2';
 import CodeComponent from '../components/CodeComponent';
 import Features from '../components/Features';
+import Nav from '../components/Nav';
+import Footer from '../components/Footer';
+
 /* Exports -------------------------------------------------------------------*/
 
 export default function LandingPage() {
@@ -19,6 +22,8 @@ export default function LandingPage() {
 			<VideoComponentV2 />
 			<CodeComponent />
 			<Features />
+			<Nav />
+			<Footer />
 		</div>
 	);
 }

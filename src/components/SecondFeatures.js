@@ -1,13 +1,13 @@
 /**
- * Second Features component
- * This is another(the same but different design) features and some information
+ * Features component (Second design): text and images
+ * It gives more details about the performance, 
+ * the simple and practical usage
+ * and how efficient it can handle possible hardware pressure
  */
-
 /* Imports -------------------------------------------------------------------*/
 
 import Inferno from 'inferno'; // eslint-disable-line
 import Component from 'inferno-component';
-// import style from 'style.js';
 
 /* Component -----------------------------------------------------------------*/
 

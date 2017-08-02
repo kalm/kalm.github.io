@@ -1,12 +1,13 @@
 /**
  * Nav component
- * This is the menu and the search bar
+ * This is the menu will allow users to access different pages
+ * such as documentation and getting started 
+ * and the search bar provide a quick search for files 
  */
 /* Imports -------------------------------------------------------------------*/
 
 import Inferno from 'inferno'; // eslint-disable-line
 import Component from 'inferno-component';
-// import style from 'style.js';
 
 /* Component -----------------------------------------------------------------*/
 
