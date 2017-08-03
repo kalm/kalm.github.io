@@ -19,7 +19,7 @@ class Footer extends Component {
 					<h4>Copyrights © 2017 All Rights Reserved by Kalm</h4>
 					<div id="footer-contact">
 						<ul className="contact">
-							<li><a href="#"><img src="./image/github.png" /></a></li>
+							<li><a href="#"><img src="../public/images/github.png" /></a></li>
 						</ul>
 					</div>
 				</footer>
