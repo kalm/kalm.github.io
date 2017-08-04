@@ -18,7 +18,7 @@ class Features extends Component {
 			<div className="container features">
 				<div className="row">
 					<div className="col-lg-6">
-						<img className="rounded-circle feature-img" src="../public/images/optimize.png" alt="Generic placeholder image" />
+						<img className="rounded-circle feature-img" src="./images/optimize.png" alt="Generic placeholder image" />
 						<ul>
 							<h3>Network Optimizations</h3>
 							<li>- Scaling is more predictable</li>
@@ -27,7 +27,7 @@ class Features extends Component {
 						</ul>
 					</div>
 					<div className="col-lg-6">
-						<img className="rounded-circle feature-img" src="../public/images/use.png" alt="Generic placeholder image" />
+						<img className="rounded-circle feature-img" src="./images/use.png" alt="Generic placeholder image" />
 						<ul>
 							<h3>Simple usage</h3>
 							<li>- Intuitive single syntax for all protocols</li>
@@ -36,7 +36,7 @@ class Features extends Component {
 						</ul>
 					</div>
 					<div className="col-lg-6">
-						<img className="rounded-circle feature-img" src="../public/images/perform.png" alt="Generic placeholder image" />
+						<img className="rounded-circle feature-img" src="./images/perform.png" alt="Generic placeholder image" />
 						<ul>
 							<h3>Performances</h3>
 							<li>- Raw throughput up to 8x higher ( graphics will be included)</li>
@@ -45,7 +45,7 @@ class Features extends Component {
 						</ul>
 					</div>
 					<div className="col-lg-6">
-						<img className="rounded-circle feature-img" src="../public/images/pressure.png" alt="Generic placeholder image" />
+						<img className="rounded-circle feature-img" src="./images/pressure.png" alt="Generic placeholder image" />
 						<ul>
 							<h3>Hardware pressure</h3>
 							<li>- (When running 10000 users in a typical scenario)</li>

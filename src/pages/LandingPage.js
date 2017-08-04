@@ -17,10 +17,10 @@ import Footer from '../components/Footer';
 export default function LandingPage() {
 	return (
 		<div>
+			<Nav />
 			<VideoComponent />
 			<CodeComponent />
-			<Features />
-			<Nav />
+			<Features />			
 			<Footer />
 		</div>
 	);
