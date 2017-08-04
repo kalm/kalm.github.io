@@ -17,7 +17,7 @@ class CodeComponent extends Component {
 					<div className="row">
 						<div className="col-md-12 text-center">
 							<h2 className="section-title pb-3 mt-5">Getting started</h2>
-								<p className="py-3 section-subtitle">
+							<p className="py-3 section-subtitle">
 									Lorem ipsum dolor sit amet, consectetur<br hidden-sm-down /> adipisicing elit,
 				sed do eiusmod tempor incididunt ut labore.</p>
 						</div>
@@ -32,7 +32,7 @@ class CodeComponent extends Component {
 
 						<div className="col-md-6 text-center my-5">
 							<h4 className="description-btn">Server</h4>
-							<h3 class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</h3>
+							<h3 className="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</h3>
 							<button type="button" className="btn btn-default btn-doc mb-5">Getting started</button>
 						</div>
 
@@ -43,7 +43,7 @@ class CodeComponent extends Component {
 					<div className="row">
 						<div className="col-md-6 text-center my-5">
 							<h4 className="description-btn">Client</h4>
-							<h3 class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</h3>
+							<h3 className="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</h3>
 							<button type="button" className="btn btn-default btn-doc mb-5">Documentation</button>
 						</div>
 
