@@ -1,17 +1,21 @@
-.features ul{
-	position: relative;
-	top: 20px;
-	left: 40px;
-}
+// .features ul{
+// 	position: relative;
+// 	top: 20px;
+// 	left: 40px;
+// }
 .features{
 	margin: auto;	
+}
+.features ul{
+	// float: left;
+	padding-left: 0;
 }
 .features li{
 	list-style: none;
 	line-height: 1.6;
 }
 .features li:last-child{
-	margin-left: 63px;
+	// margin-left: 63px;
 	margin-bottom: 60px;
 }
 .feature-img{
@@ -22,4 +26,8 @@
 .feature-img{
 	position: relative;
 	left: 40px;
+}
+.features-text{
+	padding-left: 40px;
+	float: left;
 }
