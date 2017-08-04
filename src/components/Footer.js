@@ -14,7 +14,7 @@ import Component from 'inferno-component';
 class Footer extends Component {
 	render() {
 		return (
-			<div className="container">
+			<div className="container-fluid footer-custom">
 				<footer className="footer">
 					<h4>Copyrights © 2017 All Rights Reserved by Kalm</h4>
 					<div id="footer-contact">

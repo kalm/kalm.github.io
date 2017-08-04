@@ -14,7 +14,7 @@ import Component from 'inferno-component';
 class Navbar extends Component {
 	render() {
 		return (
-			<div className="container">
+			<div className="container-fluid nav-custom">
 				<nav className="navbar navbar-toggleable-md navbar-fixed-top navbar-light bg-faded">
 					<button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span className="navbar-toggler-icon"></span>
