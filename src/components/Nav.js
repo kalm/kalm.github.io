@@ -3,8 +3,8 @@
  * This is the menu will allow users to access different pages
  * such as documentation and getting started
  * and the search bar provide a quick search for files
-
  */
+ 
 /* Imports -------------------------------------------------------------------*/
 
 import Inferno from 'inferno'; // eslint-disable-line

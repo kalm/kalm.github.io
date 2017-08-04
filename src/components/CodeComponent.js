@@ -35,11 +35,10 @@ class CodeComponent extends Component {
 							<h3 className="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</h3>
 							<button type="button" className="btn btn-default btn-doc mb-5">Getting started</button>
 						</div>
-
 					</div>
 				</div>
 
-				<div className="container pt-5">
+				<div className="container">
 					<div className="row">
 						<div className="col-md-6 text-center my-5">
 							<h4 className="description-btn">Client</h4>
@@ -56,6 +55,7 @@ class CodeComponent extends Component {
 						</div>
 					</div>
 				</div>
+
 			</div>
 		);
 	}
