@@ -19,7 +19,7 @@ class VideoComponent extends Component {
 						<div className="row align-items-center">
 							<div className="col-md-12 text-center text-white">
 								<div className="">
-									<img src="kalm-logo.png" className="pt-3 mb-4 hidden-sm-down" />
+									<img src="./images/kalm-logo.png" className="pt-3 mb-4 hidden-sm-down" />
 									<h1 className="title pt-3">The Socket Manager</h1>
 									<p className="sub-title">Network Communications stabilization and optimization<br className="hidden-sm-down" /> for high debit applications</p>
 
