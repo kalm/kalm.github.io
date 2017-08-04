@@ -1,0 +1,18 @@
+footer{
+	z-index: 3;
+	background: #f4f4f4;
+	height: 60px;
+	color:#1782ce;
+	text-align: center;
+	padding-top: 15px;
+	overflow-y: hidden;
+}
+#footer-contact{
+	text-align: right;
+	margin-top: -35px;
+}
+.contact li{
+	display: inline;
+	list-style: none;
+	padding: 5px;	
+}
