@@ -23,10 +23,10 @@ class SecondFeatures extends Component {
 							<li> Atomic congestion control settings</li>
 							<li> Reduces bandwidth from protocol overhead</li>
 						</ul>
-						<img className="rounded-circle feat-img-1" src="./image/optimize.png" alt="Generic placeholder image" />
+						<img className="rounded-circle feat-img-1" src="./images/optimize.png" alt="Generic placeholder image" />
 					</div>
 					<div className="col-lg-6 select2">
-						<img className = "rounded-circle feat-img-2" src="./image/simple.png" alt="Generic placeholder image" />
+						<img className = "rounded-circle feat-img-2" src="./images/simple.png" alt="Generic placeholder image" />
 						<ul>
 							<h3>Simple usage</h3>
 							<li> Intuitive single syntax for all protocols</li>
@@ -42,10 +42,10 @@ class SecondFeatures extends Component {
 							<li> Median latency </li>
 							<li> Bandwidth </li>
 						</ul>
-						<img className="rounded-circle feat-img-3" src="./image/perform.png" alt="Generic placeholder image" />
+						<img className="rounded-circle feat-img-3" src="./images/perform.png" alt="Generic placeholder image" />
 					</div>					
 					<div className="col-lg-6 select4">
-						<img className="rounded-circle feat-img-4" src="./image/pressure.png" alt="Generic placeholder image" />			
+						<img className="rounded-circle feat-img-4" src="./images/pressure.png" alt="Generic placeholder image" />			
 						<ul>
 							<h3>Hardware pressure</h3>
 							<li> (When running 10000 users in a typical scenario)</li>
