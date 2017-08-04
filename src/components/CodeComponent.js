@@ -12,30 +12,46 @@ class CodeComponent extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="stripe-1">
 				<div className="container pt-5">
 					<div className="row">
-						<div className="col-md-6">
-							<h4>Setting up your server</h4>
+						<div className="col-md-12 text-center">
+							<h2 className="section-title pb-3 mt-5">Getting started</h2>
+							<p className="py-3 section-subtitle">
+									Lorem ipsum dolor sit amet, consectetur<br hidden-sm-down /> adipisicing elit,
+				sed do eiusmod tempor incididunt ut labore.</p>
+						</div>
 
+						<div className="col-md-6 mt-5">
 							<pre className="well">
-								<code>
-									<span className="highlight-1">{'const'}</span> <span className="highlight-2">{'Kalm'}</span>{' = '}<span className="highlight-1">{'require'}</span>{'(\'kalm\');'}
-									<br />
-									<span className="highlight-1">{'const'}</span> <span className="highlight-2">{'ws'}</span>{' = '}<span className="highlight-1">{'require'}</span>{'(\'kalm-websocket\');'}
-									<br />
-									<br />
-									<span className="highlight-1">{'const'}</span> <span className="highlight-2">{'server'}</span>{' = Kalm.'}<span className="highlight-3">{'listen'}</span>{'({ '}{`
-  port: `}<span className="highlight-1">{'3000'}</span>{`,
-  transport: ws
-});
+								<code className="js code-custom ">
+									code
+								</code>
+							</pre>
+						</div>
 
-server.on('connection', (client) => {
-   client.subscribe('/', (data) => {
-       console.log(data);  // 'Hello from Browser!'
-   });
-});
-                `}</code>
+						<div className="col-md-6 text-center my-5">
+							<h4 className="description-btn">Server</h4>
+							<h3 className="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</h3>
+							<button type="button" className="btn btn-default btn-doc mb-5">Getting started</button>
+						</div>
+
+					</div>
+				</div>
+
+				<div className="container pt-5">
+					<div className="row">
+						<div className="col-md-6 text-center my-5">
+							<h4 className="description-btn">Client</h4>
+							<h3 className="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</h3>
+							<button type="button" className="btn btn-default btn-doc mb-5">Documentation</button>
+						</div>
+
+						<div className="col-md-6 my-5">
+							<pre className="well">
+								<code className="code-custom">
+									Code
+								</code>
 							</pre>
 						</div>
 					</div>

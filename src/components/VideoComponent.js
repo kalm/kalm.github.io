@@ -13,13 +13,13 @@ class VideoComponent extends Component {
 	render() {
 		return (
 			<div>
-				<div className="img-bg-header spacing-1x" id="large-header">
+				<div className="img-bg-header" id="large-header">
 					<canvas id="demo-canvas" style="position: absolute"></canvas>
-					<div className="container">
+					<div className="container spacing-1x">
 						<div className="row align-items-center">
 							<div className="col-md-12 text-center text-white">
 								<div className="">
-									<img src="images/kalm-logo.png" className="pt-3 mb-4 hidden-sm-down" />
+									<img src="./images/kalm-logo.png" className="pt-3 mb-4 hidden-sm-down" />
 									<h1 className="title pt-3">The Socket Manager</h1>
 									<p className="sub-title">Network Communications stabilization and optimization<br className="hidden-sm-down" /> for high debit applications</p>
 

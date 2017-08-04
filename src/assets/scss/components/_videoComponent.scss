@@ -1,10 +1,3 @@
-.img-bg-header {
-	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../../../public/images/bg-header.jpg") center center;
-	background-size: 150%;
-	max-height: 800px;
-	height: 100vh;
-}
-
 .btn-custom {
 	border-radius: 50px;
   background: transparent;
@@ -36,4 +29,17 @@
   font-weight: 300;
   margin: 20px 0 30px;
 	font-family: 'Open Sans', sans-serif;
+}
+
+.modal-title {
+	font-size: 20px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+/* Background Header */
+.img-bg-header {
+	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../../../public/images/bg-header.jpg") center center;
+	background-size: 150%;
+	max-height: 800px;
+	height: 100vh;
 }
