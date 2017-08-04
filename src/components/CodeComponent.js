@@ -16,7 +16,7 @@ class CodeComponent extends Component {
 				<div className="container pt-5">
 					<div className="row">
 						<div className="col-md-12 text-center">
-							<h2 className="section-title pb-3 mt-5">Getting started</h2>
+							<h2 className="section-title mt-5">Code sample</h2>
 							<p className="py-3 section-subtitle">
 									Lorem ipsum dolor sit amet, consectetur<br hidden-sm-down /> adipisicing elit,
 				sed do eiusmod tempor incididunt ut labore.</p>
