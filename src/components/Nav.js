@@ -3,6 +3,7 @@
  * This is the menu will allow users to access different pages
  * such as documentation and getting started
  * and the search bar provide a quick search for files
+
  */
 /* Imports -------------------------------------------------------------------*/
 
@@ -19,7 +20,7 @@ class Navbar extends Component {
 					<button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span className="navbar-toggler-icon"></span>
 					</button>
-					<a className="navbar-brand" href="index.html"><img src="./image/logo.png" alt="logo" className="logo" /></a>
+					<a className="navbar-brand" href="index.html"><img src="./images/logo.png" alt="logo" className="logo" /></a>
 
 					<div className="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul className="navbar-nav mr-auto">
@@ -45,5 +46,4 @@ class Navbar extends Component {
 }
 
 /* Exports -------------------------------------------------------------------*/
-
 export default Navbar;

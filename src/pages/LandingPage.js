@@ -20,7 +20,7 @@ export default function LandingPage() {
 			<Nav />
 			<VideoComponent />
 			<CodeComponent />
-			<Features />
+			<Features />			
 			<Footer />
 		</div>
 	);
