@@ -8,3 +8,38 @@
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
 }
+
+.highlight-1 {
+  color: $red;
+}
+
+.highlight-2 {
+  color: #005cc5;
+}
+
+.highlight-3 {
+  color: $purple;
+}
+
+.highlight-4 {
+  color: $grey;
+}
+
+.btn-doc {
+	border-radius: 50px;
+  background: transparent;
+  padding: 15px 20px;
+  min-width: 170px;
+  border: 2px solid #0e426d;
+  font-size: 14px;
+	font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+
+	&:hover,
+	&:focus {
+		// background-color: #fff;
+		color: #0e426d;
+		border: 2px solid #e24384 ;
+	}
+}
