@@ -13,19 +13,20 @@ class VideoComponent extends Component {
 	render() {
 		return (
 			<div>
-				<div className="jumbotron">
+				<div className="img-bg-header spacing-1x" id="large-header">
+					<canvas id="demo-canvas" style="position: absolute"></canvas>
 					<div className="container">
-						<div className="row">
-							<div className="col-md-12 text-center">
-								<img src="images/kalm-logo.png" className="mb-4" />
+						<div className="row align-items-center">
+							<div className="col-md-12 text-center text-white">
+								<div className="">
+									<img src="images/kalm-logo.png" className="pt-3 mb-4 hidden-sm-down" />
+									<h1 className="title pt-3">The Socket Manager</h1>
+									<p className="sub-title">Network Communications stabilization and optimization<br className="hidden-sm-down" /> for high debit applications</p>
 
-								<h1>Kalm <br /><small>The socket manager</small></h1>
-
-								<p>Stabilization and optimization of Network communications in high debit applications</p>
-
-								<button type="button" className="btn btn-primary btn-demo" data-toggle="modal" data-target="#exampleModal">
-								Kalm demo
-								</button>
+									<button type="button" className="btn btn-default btn-custom mb-5" data-toggle="modal" data-target="#exampleModal">
+										Kalm demo
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
