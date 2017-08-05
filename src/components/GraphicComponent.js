@@ -12,7 +12,7 @@ class GraphicComponent extends Component {
 
 	render() {
 		return (
-			<div className="stripe-1">
+			<div className="stripe-1 z-bottom">
 				<div className="network-bg">
 					<div className="container spacing-1x">
 						<div className="row">
