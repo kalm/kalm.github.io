@@ -25,8 +25,7 @@ class CodeComponent extends Component {
 						<div className="col-md-6 mt-5">
 							<pre>
 								<code className="js p-5">
-{
-	`
+									{`
 const Kalm = require('kalm');
 
 // Listening for incoming UDP transactions on port 6000
@@ -48,8 +47,7 @@ server.on('connection', (client) => {
   // Broadcast to all connections subscribed to the channel 'user.join'
   server.broadcast('user.join', { foo: 'bar' });
 });
-	`
-}
+									`}
 								</code>
 							</pre>
 						</div>
@@ -71,8 +69,7 @@ server.on('connection', (client) => {
 						<div className="col-md-6 my-5">
 							<pre>
 								<code className="js p-5">
-{
-`
+									{`
 import Kalm from 'kalm';
 
 // Opens a connection to the server
@@ -84,8 +81,7 @@ const client = Kalm.connect({
 
 client.write('user.action', {body: 'This is an object!'});
 client.subscribe('user.join', () => { //... });
-`
-}
+									`}
 								</code>
 							</pre>
 						</div>
