@@ -14,7 +14,6 @@ import Component from 'inferno-component';
 class Footer extends Component {
 	render() {
 		return (
-
 			<div className="container-fluid footer-custom">
 				<div className="row">
 					<div className="col-md-12">

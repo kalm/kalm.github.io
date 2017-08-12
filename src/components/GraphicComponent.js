@@ -17,16 +17,18 @@ class GraphicComponent extends Component {
 					<div className="container spacing-1x">
 						<div className="row">
 							<div className="col-12 text-center">
-								<h2 className="section-title-light pt-3 mt-5">Performance</h2>
-								<p className="py-4 section-subtitle-light">
-										Lorem ipsum dolor sit amet, consectetur<br hidden-sm-down /> adipisicing elit,
-					sed do eiusmod tempor incididunt ut labore.</p>
+								<h2 className="section-title-light py-5 mt-5">Performance analysis</h2>
 							</div>
 						</div>
 
 						<div className="row mb-5">
-							<div className="col-md-6">
-								<img src="./images/performance.png" alt=""/>
+							<div className="col-md-7">
+								<div id="barchart_material" style="height: 400px;"></div>
+							</div>
+
+							<div className="col-md-5 pl-5">
+								<h3 className="section-subtitle-light mt-5 pt-5">Bytes transfered</h3>
+								<p className="section-text-light">Bundled calls means that you only send the protocol headers (40 bytes + application overhead) once. This makes a huge difference when you need to send a large number of small packets.</p>
 							</div>
 						</div>
 					</div>

@@ -3,6 +3,8 @@
 import Inferno from 'inferno'; // eslint-disable-line
 import Component from 'inferno-component';
 
+
+
 /* Component -----------------------------------------------------------------*/
 
 class CodeComponent extends Component {
@@ -14,48 +16,81 @@ class CodeComponent extends Component {
 		return (
 			<div className="stripe-1">
 				<div className="container pt-5">
-					<div className="row">
+					<div className="row align-items-center">
 						<div className="col-md-12 text-center">
-							<h2 className="section-title mt-5">Code sample</h2>
-							<p className="py-3 section-subtitle">
-									Lorem ipsum dolor sit amet, consectetur<br hidden-sm-down /> adipisicing elit,
-				sed do eiusmod tempor incididunt ut labore.</p>
+							<h2 className="section-title mt-5 mb-2">Code sample</h2>
+							<h3 className="section-subtitle">Easy-to-use single syntax for all protocols</h3>
 						</div>
 
 						<div className="col-md-6 mt-5">
-							<pre className="well">
-								<code className="js code-custom ">
-									code
+							<pre>
+								<code className="js p-5">
+{
+	`
+const Kalm = require('kalm');
+
+// Listening for incoming UDP transactions on port 6000
+const server = Kalm.listen({
+  port: 6000
+});
+
+server.on('connection', (client) => {
+  // Subscribe to 'user.action' channel
+  client.subscribe('user.action', (req) => {
+    /*
+      req.body       The body of the request
+      req.client     The connection handle reference
+      req.frame      The details of the network frame
+      req.session    The session store for that connection
+    */
+  });
+
+  // Broadcast to all connections subscribed to the channel 'user.join'
+  server.broadcast('user.join', { foo: 'bar' });
+});
+	`
+}
 								</code>
 							</pre>
 						</div>
 
 						<div className="col-md-6 text-center my-5">
-							<h4 className="description-btn">Server</h4>
-							<h3 className="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</h3>
+							<h4 className="description-btn p-3">Setting up the server</h4>
 							<button type="button" className="btn btn-default btn-doc mb-5">Getting started</button>
 						</div>
 					</div>
 				</div>
 
 				<div className="container">
-					<div className="row">
+					<div className="row align-items-center">
 						<div className="col-md-6 text-center my-5">
-							<h4 className="description-btn">Client</h4>
-							<h3 className="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</h3>
-							<button type="button" className="btn btn-default btn-doc mb-5">Documentation</button>
+							<h4 className="description-btn p-3">Setting up the client</h4>
+							<a href="./docs/index.html" className="btn btn-default btn-doc mb-5">Documentation</a>
 						</div>
 
 						<div className="col-md-6 my-5">
-							<pre className="well">
-								<code className="code-custom">
-									Code
+							<pre>
+								<code className="js p-5">
+{
+`
+import Kalm from 'kalm';
+
+// Opens a connection to the server
+// Port, transport and serial settings should match
+const client = Kalm.connect({
+	hostname: '0.0.0.0', // Server's IP
+	port: 6000 // Server's port
+});
+
+client.write('user.action', {body: 'This is an object!'});
+client.subscribe('user.join', () => { //... });
+`
+}
 								</code>
 							</pre>
 						</div>
 					</div>
 				</div>
-
 			</div>
 		);
 	}

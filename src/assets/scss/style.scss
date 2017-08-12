@@ -9,9 +9,13 @@
 @import "./components/navComponent";
 @import "./components/graphicComponent";
 
+
 // Partials
 @import "./partials/typography";
 @import "./partials/helpers";
+
+// Vendors
+@import "./vendors/hljs";
 
 // Pages
 @import "./pages/landingPage";
