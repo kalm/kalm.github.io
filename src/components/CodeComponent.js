@@ -3,8 +3,6 @@
 import Inferno from 'inferno'; // eslint-disable-line
 import Component from 'inferno-component';
 
-
-
 /* Component -----------------------------------------------------------------*/
 
 class CodeComponent extends Component {
@@ -53,7 +51,8 @@ server.on('connection', (client) => {
 						</div>
 
 						<div className="col-md-6 text-center my-5">
-							<h4 className="description-btn p-3">Setting up the server</h4>
+							<img src="./images/svg/server-icon.svg" alt="server icon" />
+							<h4 className="description-btn pb-3">Setting up the server</h4>
 							<button type="button" className="btn btn-default btn-doc mb-5">Getting started</button>
 						</div>
 					</div>
@@ -62,6 +61,7 @@ server.on('connection', (client) => {
 				<div className="container">
 					<div className="row align-items-center">
 						<div className="col-md-6 text-center my-5">
+							<img src="./images/svg/code-icon.svg" className="code-icon" alt="code icon" />
 							<h4 className="description-btn p-3">Setting up the client</h4>
 							<a href="./docs/index.html" className="btn btn-default btn-doc mb-5">Documentation</a>
 						</div>
