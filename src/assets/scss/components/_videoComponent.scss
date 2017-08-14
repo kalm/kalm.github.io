@@ -14,6 +14,7 @@
 	&:focus {
 		background-color: #fff;
 		color: #0e426d;
+		cursor: pointer;
 	}
 }
 
@@ -38,8 +39,8 @@
 
 /* Background Header */
 .img-bg-header {
-	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../../../public/images/bg-header.jpg") center center;
-	background-size: 150%;
+	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./images/bg-header.jpg") center center;
+	background-size: cover;
 	max-height: 800px;
 	height: 100vh;
 }

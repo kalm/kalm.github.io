@@ -1,27 +1,27 @@
-.footer-custom{
+.footer-custom {
 	margin: 0;
-	padding: 0;	
+	padding: 0;
 }
 
 footer {
 	z-index: 3;
 	height: 60px;
-	color: #fff;
+	color:#0e426d;
 	text-align: center;
 	padding-top: 15px;
 	overflow-y: hidden;
 	background-image: url(./images/bg-header.jpg);
 }
 
-#footer-contact {
+#footer-contact{
 	text-align: right;
 	margin-top: -35px;
 }
 
-.contact li {
+.contact li{
 	display: inline;
 	list-style: none;
-	padding: 5px;	
+	padding: 5px;
 }
 .img-git {
 	padding-right: 20px;

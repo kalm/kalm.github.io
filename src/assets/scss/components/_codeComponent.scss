@@ -35,15 +35,17 @@
 	font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 4px;
+	color: #000;
 
 	&:hover,
 	&:focus {
 		// background-color: #fff;
 		color: #0e426d;
-		border: 2px solid #e24384 ;
+		border: 2px solid #e24384;
+		cursor: pointer;
 	}
 }
 
-.code-custom {
-	background: none;
+.code-icon {
+	margin-bottom: -40px;
 }

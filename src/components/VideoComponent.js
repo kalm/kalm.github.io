@@ -12,7 +12,7 @@ class VideoComponent extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="z-bottom">
 				<div className="img-bg-header" id="large-header">
 					<canvas id="demo-canvas" style="position: absolute"></canvas>
 					<div className="container spacing-1x">
