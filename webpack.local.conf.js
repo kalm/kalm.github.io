@@ -7,7 +7,7 @@ module.exports = {
 		filename: 'bundle.js',
 		publicPath: 'http://localhost:8080/'
 	},
-	//devtool: 'source-map',
+	devtool: 'source-map',
 	module: {
 		loaders: [
 			{
@@ -16,14 +16,7 @@ module.exports = {
 			},
 			{
         test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader']
-    	},
-			{
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: [
-            'file-loader?hash=sha512&digest=hex&name=public/images/[name].[ext]',
-            'image-webpack-loader?bypassOnDebug'
-        ]
+        loaders: ['style-loader', 'css-loader?url=false', 'sass-loader']
     	}
 		]
 	},

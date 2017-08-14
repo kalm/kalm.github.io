@@ -1,23 +1,25 @@
-.footer-custom{
+.footer-custom {
 	margin: 0;
 	padding: 0;
-	
 }
-footer{
+
+footer {
 	z-index: 3;
 	background: #f4f4f4;
 	height: 60px;
-	color:#1782ce;
+	color:#0e426d;
 	text-align: center;
 	padding-top: 15px;
 	overflow-y: hidden;
 }
+
 #footer-contact{
 	text-align: right;
 	margin-top: -35px;
 }
+
 .contact li{
 	display: inline;
 	list-style: none;
-	padding: 5px;	
+	padding: 5px;
 }

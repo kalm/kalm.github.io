@@ -1,6 +1,6 @@
 /**
  * Features component (Second design): text and images
- * It gives more details about the performance, 
+ * It gives more details about the performance,
  * the simple and practical usage
  * and how efficient it can handle possible hardware pressure
  */
@@ -34,8 +34,7 @@ class SecondFeatures extends Component {
 							<li> Stats and monitoring-enabled</li>
 						</ul>
 					</div>
-
-					<div className="col-lg-6 select3">						
+					<div className="col-lg-6 select3">
 						<ul>
 							<h3>Performances</h3>
 							<li> Raw throughput up to 8x higher </li>
@@ -43,9 +42,9 @@ class SecondFeatures extends Component {
 							<li> Bandwidth </li>
 						</ul>
 						<img className="rounded-circle feat-img-3" src="./images/perform.png" alt="Generic placeholder image" />
-					</div>					
+					</div>
 					<div className="col-lg-6 select4">
-						<img className="rounded-circle feat-img-4" src="./images/pressure.png" alt="Generic placeholder image" />			
+						<img className="rounded-circle feat-img-4" src="./images/pressure.png" alt="Generic placeholder image" />
 						<ul>
 							<h3>Hardware pressure</h3>
 							<li> (When running 10000 users in a typical scenario)</li>
@@ -59,6 +58,6 @@ class SecondFeatures extends Component {
 	}
 }
 
-/* Exports -------------------------------------------------------------------*/ 
+/* Exports -------------------------------------------------------------------*/
 
 export default SecondFeatures;
