@@ -1,25 +1,32 @@
-.features ul{
-	position: relative;
-	top: 20px;
-	left: 40px;
-}
 .features{
 	margin: auto;	
 }
+
+.features ul{
+	padding-left: 0;
+}
+
 .features li{
 	list-style: none;
 	line-height: 1.6;
 }
+
 .features li:last-child{
-	margin-left: 63px;
 	margin-bottom: 60px;
 }
+
 .feature-img{
 	float: left;
 	clear: both;
 	margin-right: 40px;
 }
+
 .feature-img{
 	position: relative;
 	left: 40px;
+}
+
+.features-text{
+	padding-left: 40px;
+	float: left;
 }

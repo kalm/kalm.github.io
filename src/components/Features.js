@@ -35,6 +35,7 @@ class Features extends Component {
 								<li>- Feature parity for all protocols for multiplexing</li>
 								<li>- Stats and monitoring-enabled</li>
 							</ul>
+
 						</div>
 						<div className="col-lg-6">
 							<img className="rounded-circle feature-img" src="./images/perform.png" alt="Generic placeholder image" />

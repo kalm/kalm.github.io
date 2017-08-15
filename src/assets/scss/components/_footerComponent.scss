@@ -5,12 +5,12 @@
 
 footer {
 	z-index: 3;
-	background: #f4f4f4;
 	height: 60px;
 	color:#0e426d;
 	text-align: center;
 	padding-top: 15px;
 	overflow-y: hidden;
+	background-image: url(./images/bg-header.jpg);
 }
 
 #footer-contact{
@@ -22,4 +22,7 @@ footer {
 	display: inline;
 	list-style: none;
 	padding: 5px;
+}
+.img-git {
+	padding-right: 20px;
 }
