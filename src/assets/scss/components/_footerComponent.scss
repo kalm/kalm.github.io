@@ -1,28 +1,29 @@
-.footer-custom {
-	margin: 0;
-	padding: 0;
-}
-
-footer {
-	z-index: 3;
-	height: 60px;
+.footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 80px;
 	color:#0e426d;
 	text-align: center;
-	padding-top: 15px;
-	overflow-y: hidden;
 	background-image: url(./images/bg-header.jpg);
 }
 
-#footer-contact{
-	text-align: right;
-	margin-top: -35px;
+.footer-copyright-text {
+	font-size: 1rem;
 }
 
-.contact li{
-	display: inline;
-	list-style: none;
-	padding: 5px;
-}
-.img-git {
-	padding-right: 20px;
+@media screen and (min-width: 768px) {
+	.footer {
+		height: 60px;
+	}
+
+	.footer-copyright-text {
+		font-size: 1.6rem;
+	}
+
+	.footer-contact {
+		position: absolute;
+		right: 20px;
+	}
 }
