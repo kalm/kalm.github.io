@@ -17,7 +17,7 @@
     "no-param-reassign": 1,
     "eqeqeq": 1,
     "quotes": [2, "single"],
-    "indent": [2, "tab"],
+    "indent": [2, "spaces"],
     "react/react-in-jsx-scope": 0,
     "react/prop-types": 0,
     "jsx-quotes": [2, "prefer-double"]
