@@ -1,9 +1,5 @@
 # Kalm Website
 
-* Developed as part of a learning program with [Les Pitonneux](http://www.lab12.ca/) *
-
-Based on [trueadm's Inferno boilerplate](https://github.com/trueadm/inferno-boilerplate)
-
 ---
 
 ## Installing
@@ -12,14 +8,9 @@ NPM:
 
 `npm install`
 
-Yarn:
-
-`yarn`
-
 ## Running
 
-`npm start` then open `localhost:8080`
-
+`npm start`
 
 ## Contributing
 
