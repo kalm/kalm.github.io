@@ -1,91 +1,70 @@
-<html>
+<!DOCTYPE html>
+<html lang="eng">
+
 <head>
 	<title>Kalm - The socket manager</title>
-	<!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-		<!-- Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
-		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-		<script type="text/javascript">
-		google.charts.load('current', {'packages':['bar']});
-		google.charts.setOnLoadCallback(drawChart);
-
-		function drawChart() {
-			var data = google.visualization.arrayToDataTable([
-				['Transport', 'Raw', 'Kalm'],
-				['IPC', 103681, 345813],
-				['TCP', 58209, 476559],
-				['UDP', 63028, 744595]
-			]);
-
-			var options = {
-				chart: {
-					title: 'Million requests per minute',
-					subtitle: '*Benchmarks based on a single-thread queue test with Kalm default bundling settings'
-				},
-				colors: ['#fff', '#3f91c4'],
-				backgroundColor: 'transparent',
-				bars: 'horizontal', // Required for Material Bar Charts.
-				hAxis: {
-					textStyle: {
-						color: '#fff',
-						fontSize: 20
-					}
-				},
-				vAxis: {
-					textStyle: {
-						color: '#fff',
-						fontSize: 20
-					}
-				},
-				legend: {
-					textStyle: {
-						color: '#fff',
-						fontSize: 20
-					}
-				},
-				titleTextStyle: {
-					color: '#fff',
-					fontSize: 25
-				},
-			};
-
-			var chart = new google.charts.Bar(document.getElementById('barchart_material'));
-			chart.draw(data, google.charts.Bar.convertOptions(options));
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
+	<style>
+		html,
+		body {
+			height: 100%;
 		}
-	</script>
+
+		body {
+			display: flex;
+			align-items: center;
+		}
+
+		a.github-link {
+			padding-left: 2.5rem;
+		}
+
+		a.github-link>.github-icon {
+			position: absolute;
+			left: 0.4em;
+			top: 0.65em;
+			width: 2em;
+		}
+
+		.noselect {
+			user-select: none;
+		}
+	</style>
 </head>
 
-<body>
-	<div id="app"></div>
-	<script src="bundle.js"></script>
-	<!-- Jquery -->
-	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-	<!-- Theter -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-	<!-- Bootstrap -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-	<!-- HighlightJs -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-	<script>
-	$(document).ready(function() {
-	  $('pre code').each(function(i, block) {
-	    hljs.highlightBlock(block);
-	  });
-	});
-	</script>
-
-
-  <!-- JS dependencies for animation on the header -->
-	<script src="js/TweenLite.min.js"></script>
-	<script src="js/EasePack.min.js"></script>
-	<script src="js/rAF.js"></script>
-	<script src="js/canvas-animation.js"></script>
+<body class="mh2-m">
+	<main class="sans-serif w-100 mw6 center pv2-m">
+		<div class="tc bb bw1 b--light-gray">
+			<img src="/images/kalm-logo.png" alt="kalm logo" />
+			<h1 class="fw3 mt2 mb3">Kalm</h1>
+			<h2 class="fw3 mt0">The Socket Manager</h2>
+			<div class="mt3 mb3">
+				<div class="bg-black-80 white w-100 pv3 br2">
+					<code class="ph2"><span class="noselect">$&nbsp;</span>npm install kalm</code>
+				</div>
+			</div>
+		</div>
+		<p class="mb3 f5 lh-copy measure tl">
+			Kalm aims at making high-scale realtime applications more manageable and less expensive. It features multiplexing, session
+			stores, congestion control, encryption and it works in the browser.
+		</p>
+		<div class="tc">
+			<a class="f6 link dim br2 ba ph3 pv3 dib mid-gray mr4" href="/docs/index.html">
+				Documentation
+			</a>
+			<a class="f6 link dim br2 ba pr3 pv3 dib mid-gray relative github-link" href="https://github.com/kalm/kalm.js">
+				<svg aria-labelledby="simpleicons-github-dark-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="github-icon">
+					<title id="simpleicons-github-icon" lang="en">
+						GitHub Dark icon
+					</title>
+					<path fill="rgba(0,0,0,.8)" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+					/>
+				</svg>Github
+			</a>
+		</div>
+	</main>
 </body>
+
 </html>
