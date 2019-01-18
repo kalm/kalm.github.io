@@ -1,24 +1,8 @@
 # Kalm Website
 
-* Developed as part of a learning program with [Les Pitonneux](pitonneux.com) *
-
-Based on [trueadm's Inferno boilerplate](https://github.com/trueadm/inferno-boilerplate)
+The static html page for the [kalm](https://kalm.js.org) website 
 
 ---
-
-## Installing
-
-NPM:
-
-`npm install`
-
-Yarn:
-
-`yarn`
-
-## Running
-
-`npm start` then open `localhost:8080`
 
 
 ## Contributing
