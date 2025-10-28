@@ -649,8 +649,26 @@ const server = Kalm.listen({
 			<!-- Buffering Routines -->
 			<section id="routine-realtime" class="doc-section">
 				<h2>realtime()</h2>
-				<p class="method-signature"><code>Kalm.routines.realtime(): BufferingRoutine</code></p>
+				<p class="method-signature"><code>Kalm.routines.realtime({ deferred?: boolean }): BufferingRoutine</code></p>
 				<p>Immediate transmission with minimal latency. Messages are sent as soon as they are written.</p>
+
+				<h3>Parameters</h3>
+				<table class="param-table">
+					<thead>
+						<tr>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>deferred</code></td>
+							<td><code>boolean</code></td>
+							<td>(Optional) Defers emit until the next UV cycle. Can prevent blocking of the execution thread</td>
+						</tr>
+					</tbody>
+				</table>
 
 				<h3>Example</h3>
 
@@ -658,7 +676,9 @@ const server = Kalm.listen({
   host: 'localhost',
   port: 3000,
   transport: tcp(),
-  routine: Kalm.routines.realtime()
+  routine: Kalm.routines.realtime({
+	deferred: false
+  })
 });</code></pre>
 				<div class="info-box">
 					<span class="info-icon">⚡</span>
