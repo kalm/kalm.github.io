@@ -8,6 +8,7 @@
 
 	// Configuration
 	const KALM_SERVER_HOST = 'kalm-github-io.onrender.com';
+	// const KALM_SERVER_HOST = '0.0.0.0';  // Local debug
 	const KALM_SERVER_PORT = 9001;
 	const CHANNEL = 'chat';
 
@@ -18,6 +19,7 @@
 	let reconnectAttempts = 0;
 	const MAX_RECONNECT_ATTEMPTS = 5;
 	let reconnectTimeout = null;
+	let forceDisconnect = false;
 
 	// DOM Elements
 	const elements = {
@@ -27,7 +29,8 @@
 		messageInput: document.getElementById('messageInput'),
 		sendButton: document.getElementById('sendButton'),
 		chatMessages: document.getElementById('chatMessages'),
-		connectionStatus: document.getElementById('connectionStatus')
+		connectionStatus: document.getElementById('connectionStatus'),
+		connectedUsers: document.getElementById('connectedUsers'),
 	};
 
 	// Initialize
@@ -41,6 +44,8 @@
 		setupEventListeners();
 		loadThemePreference();
 		loadUsername();
+
+		setTimeout(connect, 150);
 	}
 
 	// Event Listeners
@@ -102,8 +107,10 @@
 	// Connection Management
 	function toggleConnection() {
 		if (isConnected) {
+			forceDisconnect = true;
 			disconnect();
 		} else {
+			forceDisconnect = false;
 			connect();
 		}
 	}
@@ -117,7 +124,7 @@
 
 		if (client) {
 			try {
-				client.disconnect();
+				client.destroy();
 			} catch (e) {
 				// Ignore errors on disconnect
 			}
@@ -157,8 +164,7 @@
 		client.on('error', handleError);
 
 		// Chat messages
-		client.subscribe(CHANNEL);
-		client.on(CHANNEL, handleChatMessage);
+		client.subscribe(CHANNEL, handleChatMessage);
 	}
 
 	function handleConnect() {
@@ -173,7 +179,6 @@
 		isConnected = false;
 		updateConnectionStatus('disconnected', 'Disconnected');
 		updateUI();
-		addSystemMessage('Disconnected from server. Attempting to reconnect...');
 		attemptReconnect();
 	}
 
@@ -185,7 +190,9 @@
 	function handleChatMessage(data) {
 		// Handle different message types
 		if (data.type === 'system') {
-			addSystemMessage(data.message);
+			// addSystemMessage(data.message);
+			updateConnectedCount(data.connections);
+
 		} else if (data.user && data.message) {
 			addChatMessage(data);
 		}
@@ -199,7 +206,7 @@
 
 		if (client) {
 			try {
-				client.disconnect();
+				client.destroy();
 			} catch (e) {
 				// Ignore errors
 			}
@@ -214,6 +221,8 @@
 	}
 
 	function attemptReconnect() {
+		if (forceDisconnect) return;
+
 		if (reconnectTimeout) {
 			clearTimeout(reconnectTimeout);
 		}
@@ -271,6 +280,10 @@
 			elements.connectionStatus.classList.add('connected');
 		}
 		elements.connectionStatus.querySelector('.status-text').textContent = text;
+	}
+
+	function updateConnectedCount(count) {
+		elements.connectedUsers.querySelector('.status-text').textContent = `${count} User${count > 1 ? 's' : ''} connected`;
 	}
 
 	function updateUI() {
@@ -356,7 +369,7 @@
 	window.addEventListener('beforeunload', function() {
 		if (client) {
 			try {
-				client.disconnect();
+				client.destroy();
 			} catch (e) {
 				// Ignore errors
 			}

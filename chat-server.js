@@ -27,10 +27,6 @@ const server = Kalm.listen({
 	transport: ws(),
 });
 
-// Store connected clients
-const clients = new Set();
-let clientCounter = 0;
-
 // Server ready
 server.on('ready', () => {
 	console.log('╔═══════════════════════════════════════╗');
@@ -45,34 +41,20 @@ server.on('ready', () => {
 	console.log('');
 });
 
+// Generate random client ID
+function generateClientId() {
+	return Math.random().toString(36).substring(2, 10) + Math.random().toString(36).substring(2, 10);
+}
+
 // Handle new connections
 server.on('connection', (client) => {
-	clientCounter++;
-	const clientId = clientCounter;
+	const clientId = generateClientId();
+	client.label = clientId;
 
-	clients.add(client);
-
-	console.log(`[${new Date().toLocaleTimeString()}] ✅ Client #${clientId} connected (Total: ${clients.size})`);
+	console.log(`[${new Date().toLocaleTimeString()}] ✅ Client ${clientId} connected (Total: ${server.connections.length})`);
 
 	// Subscribe client to chat channel
-	client.subscribe(CHANNEL);
-
-	// Send welcome message
-	client.write(CHANNEL, {
-		type: 'system',
-		message: 'Welcome to Kalm Chat! You are now connected.',
-		timestamp: Date.now()
-	});
-
-	// Broadcast join notification to all other clients
-	server.broadcast(CHANNEL, {
-		type: 'system',
-		message: `A new user has joined the chat`,
-		timestamp: Date.now()
-	});
-
-	// Handle messages from this client
-	client.on(CHANNEL, (data) => {
+	client.subscribe(CHANNEL, (data) => {
 		console.log(`[${new Date().toLocaleTimeString()}] 💬 ${data.user || 'Anonymous'}: ${data.message}`);
 
 		// Broadcast to all clients
@@ -83,22 +65,30 @@ server.on('connection', (client) => {
 		});
 	});
 
+	// Broadcast join notification to all other clients
+	server.broadcast(CHANNEL, {
+		type: 'system',
+		message: `A new user has joined the chat`,
+		timestamp: Date.now(),
+		connections: server.connections.length,
+	});
+
 	// Handle disconnection
 	client.on('disconnect', () => {
-		clients.delete(client);
-		console.log(`[${new Date().toLocaleTimeString()}] ❌ Client #${clientId} disconnected (Total: ${clients.size})`);
+		console.log(`[${new Date().toLocaleTimeString()}] ❌ Client ${client.label} disconnected (Total: ${server.connections.length})`);
 
 		// Broadcast leave notification
 		server.broadcast(CHANNEL, {
 			type: 'system',
 			message: `A user has left the chat`,
-			timestamp: Date.now()
+			timestamp: Date.now(),
+			connections: server.connections.length,
 		});
 	});
 
 	// Handle errors
 	client.on('error', (err) => {
-		console.error(`[${new Date().toLocaleTimeString()}] ⚠️  Client #${clientId} error:`, err.message);
+		console.error(`[${new Date().toLocaleTimeString()}] ⚠️  Client ${client.label} error:`, err.message);
 	});
 });
 
@@ -121,7 +111,7 @@ process.on('SIGINT', () => {
 	console.log('');
 	console.log('');
 	console.log('🛑 Shutting down server...');
-	console.log(`   Disconnecting ${clients.size} client(s)...`);
+	console.log(`   Disconnecting ${server.connections.length} client(s)...`);
 
 	// Notify all clients
 	server.broadcast(CHANNEL, {

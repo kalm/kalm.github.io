@@ -131,6 +131,12 @@ body {
 	font-weight: 700;
 	color: var(--text-primary);
 	text-decoration: none;
+	transition: opacity 0.3s ease;
+	cursor: pointer;
+}
+
+.nav-logo:hover {
+	opacity: 0.8;
 }
 
 .nav-logo img {

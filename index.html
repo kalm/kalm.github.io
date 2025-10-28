@@ -13,10 +13,10 @@
 	<!-- Top Navigation -->
 	<nav class="top-nav">
 		<div class="nav-container">
-			<div class="nav-logo">
+			<a href="https://kalm.js.org" class="nav-logo">
 				<img src="/images/kalmv3.png" alt="kalm logo" />
 				<span>Kalm</span>
-			</div>
+			</a>
 			<div class="nav-links">
 				<a href="#home" class="nav-link active">Home</a>
 				<a href="docs.html" class="nav-link">Documentation</a>
@@ -141,12 +141,11 @@ client.on('chat', (data) => {
 						<span class="status-dot"></span>
 						<span class="status-text">Disconnected</span>
 					</div>
+					<div class="connection-status" id="connectedUsers">
+						<span class="status-text">0 Users connected</span>
+					</div>
 				</div>
 				<div class="chat-messages" id="chatMessages">
-					<div class="system-message">
-						<span class="message-icon">ℹ️</span>
-						<span>Welcome to Kalm live chat! Connect to the server to start messaging.</span>
-					</div>
 				</div>
 				<div class="chat-input-container">
 					<input
