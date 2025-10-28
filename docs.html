@@ -557,7 +557,10 @@ client.subscribe('chat', (data) => {
 
 const server = Kalm.listen({
   port: 3000,
-  transport: tcp()
+  transport: tcp({
+	/** The maximum idle time for the connection before it hangs up (default: 30000) */
+	socketTimeout?: number
+  })
 });</code></pre>
 				<div class="info-box">
 					<span class="info-icon">ℹ️</span>
@@ -574,7 +577,16 @@ const server = Kalm.listen({
 
 const server = Kalm.listen({
   port: 3000,
-  transport: udp()
+  transport: udp({
+    /** The udp socket family (default: udp4) */
+    type?: 'udp4' | 'udp6'
+    /** The ip address that shows up when calling `local()` (default: '0.0.0.0') */
+    localAddr?: string
+    /** UDP reuse Address seting (default: false) */
+    reuseAddr?: boolean
+    /** The maximum idle time for the connection before it hangs up (default: 30000) */
+    socketTimeout?: number
+  })
 });</code></pre>
 				<div class="info-box">
 					<span class="info-icon">ℹ️</span>
@@ -591,7 +603,16 @@ const server = Kalm.listen({
 
 const server = Kalm.listen({
   port: 9001,
-  transport: ws()
+  transport: ws({
+    /** The certificate file content for a secure socket connection, both this and `key` must be set */
+    cert?: string
+    /** The key file content for a secure socket connection, both this and `cert` must be set */
+    key?: string
+    /** Indicates wether a server or client should use wss:// protocol. Will throw an error if set without cert or key on the server */
+    secure?: boolean
+    /** The maximum idle time for the connection before it hangs up (default: 30000) */
+    socketTimeout: number
+  })
 });</code></pre>
 				<div class="info-box">
 					<span class="info-icon">ℹ️</span>
@@ -607,8 +628,15 @@ const server = Kalm.listen({
 				<pre class="code-block"><code>const ipc = require('@kalm/ipc');
 
 const server = Kalm.listen({
-  port: '/tmp/kalm.sock',
-  transport: ipc()
+  port: 9001, // Not an actual port for IPC transport, instead is a suffix for the file-handler
+  transport: ipc({
+    /** The maximum idle time for the connection before it hangs up (default: 30000) */
+    socketTimeout: 30000,
+    /** The prefix to use for file handler location. Final handler is ${path + port}
+    	Ex: '/tmp/app.socket-9001' for Mac and Linux or 'C:\Windows\Temp\app.socket-9001' on Windows 
+	*/
+    path: '/tmp/app.socket-'
+  })
 });</code></pre>
 				<div class="info-box">
 					<span class="info-icon">ℹ️</span>
@@ -623,6 +651,9 @@ const server = Kalm.listen({
 				<h2>realtime()</h2>
 				<p class="method-signature"><code>Kalm.routines.realtime(): BufferingRoutine</code></p>
 				<p>Immediate transmission with minimal latency. Messages are sent as soon as they are written.</p>
+
+				<h3>Example</h3>
+
 				<pre class="code-block"><code>const client = Kalm.connect({
   host: 'localhost',
   port: 3000,
@@ -639,7 +670,7 @@ const server = Kalm.listen({
 
 			<section id="routine-tick" class="doc-section">
 				<h2>tick()</h2>
-				<p class="method-signature"><code>Kalm.routines.tick({ hz: number }): BufferingRoutine</code></p>
+				<p class="method-signature"><code>Kalm.routines.tick({ hz: number, seed?: number }): BufferingRoutine</code></p>
 				<p>Fixed-frequency dispatch. Batches messages and sends them at regular intervals.</p>
 
 				<h3>Parameters</h3>
@@ -656,6 +687,11 @@ const server = Kalm.listen({
 							<td><code>hz</code></td>
 							<td><code>number</code></td>
 							<td>Frequency in Hz (e.g., 5 Hz = 200ms intervals)</td>
+						</tr>
+						<tr>
+							<td><code>seed</code></td>
+							<td><code>number</code></td>
+							<td>(Optional) A seed can be provided to synchronize multiple servers. Ex: a main node will pass an ISO timestamp to other nodes.</td>
 						</tr>
 					</tbody>
 				</table>
@@ -677,13 +713,47 @@ const server = Kalm.listen({
 
 			<section id="routine-dynamic" class="doc-section">
 				<h2>dynamic()</h2>
-				<p class="method-signature"><code>Kalm.routines.dynamic(): BufferingRoutine</code></p>
+				<p class="method-signature"><code>Kalm.routines.dynamic({ maxInterval: number, maxPackets?: number, maxBytes?: number }): BufferingRoutine</code></p>
 				<p>Adaptive buffering based on traffic patterns. Automatically adjusts batching strategy.</p>
+
+				<h3>Parameters</h3>
+				<table class="param-table">
+					<thead>
+						<tr>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>maxInterval</code></td>
+							<td><code>number</code></td>
+							<td>Maximum interval between emits in milliseconds</td>
+						</tr>
+						<tr>
+							<td><code>maxPackets</code></td>
+							<td><code>number</code></td>
+							<td>(Optional) Maximum number of messages in the queue.</td>
+						</tr>
+						<tr>
+							<td><code>maxBytes</code></td>
+							<td><code>number</code></td>
+							<td>(Optional) Maximum number of total bytes in the queue across all messages.</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3>Example</h3>
 				<pre class="code-block"><code>const client = Kalm.connect({
   host: 'localhost',
   port: 3000,
   transport: tcp(),
-  routine: Kalm.routines.dynamic()
+  routine: Kalm.routines.dynamic({
+  	maxInterval: 50, // Sends the payload if 50ms elapsed since the last emit...
+  	maxPackets: 3, // OR if there are 3 or more messages in the payload...
+  	maxBytes: 3500  // OR if the size of the payload reaches 3500 bytes.
+  })
 });</code></pre>
 				<div class="info-box">
 					<span class="info-icon">🤖</span>
