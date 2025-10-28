@@ -129,9 +129,9 @@
 		try {
 			// Create Kalm client
 			client = kalm.connect({
-				hostname: KALM_SERVER_HOST,
+				host: KALM_SERVER_HOST,
 				port: KALM_SERVER_PORT,
-				transport: ws(),
+				transport: ws({ cert: 1, key: 1 }),
 			});
 
 			// Set up event handlers

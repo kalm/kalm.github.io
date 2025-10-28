@@ -63,3 +63,5 @@ typings/
 # Compiled components
 public/bundle.js
 out
+
+package-lock.json

@@ -17,14 +17,14 @@ const ws = require('@kalm/ws');
 
 // Configuration
 const PORT = 9001;
-const HOST = 'https://kalm-github-io.onrender.com';
+const HOST = 'kalm-github-io.onrender.com';
 const CHANNEL = 'chat';
 
 // Create server
 const server = Kalm.listen({
 	port: PORT,
 	host: HOST,
-	transport: ws
+	transport: ws(),
 });
 
 // Store connected clients
