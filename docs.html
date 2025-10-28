@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Kalm - API Documentation</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="color-scheme" content="light dark">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="docs.css">
+</head>
+
+<body>
+	<!-- Top Navigation -->
+	<nav class="top-nav">
+		<div class="nav-container">
+			<div class="nav-logo">
+				<a href="index.html" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: inherit;">
+					<img src="/images/kalmv3.png" alt="kalm logo" />
+					<span>Kalm</span>
+				</a>
+			</div>
+			<div class="nav-links">
+				<a href="index.html" class="nav-link">Home</a>
+				<a href="docs.html" class="nav-link active">Documentation</a>
+				<a href="https://github.com/kalm/kalm.js/tree/master/examples" target="_blank" class="nav-link">Examples</a>
+				<a href="https://github.com/kalm/kalm.js" target="_blank" class="nav-link">
+					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="github-icon">
+						<path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+					</svg>
+					GitHub
+				</a>
+			</div>
+			<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+				<svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<circle cx="12" cy="12" r="5"/>
+					<line x1="12" y1="1" x2="12" y2="3"/>
+					<line x1="12" y1="21" x2="12" y2="23"/>
+					<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+					<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+					<line x1="1" y1="12" x2="3" y2="12"/>
+					<line x1="21" y1="12" x2="23" y2="12"/>
+					<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+					<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+				</svg>
+				<svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+				</svg>
+			</button>
+		</div>
+	</nav>
+
+	<!-- Documentation Layout -->
+	<div class="docs-container">
+		<!-- Sidebar Navigation -->
+		<aside class="docs-sidebar">
+			<div class="sidebar-section">
+				<h4>Getting Started</h4>
+				<a href="#introduction" class="sidebar-link">Introduction</a>
+				<a href="#installation" class="sidebar-link">Installation</a>
+				<a href="#quick-start" class="sidebar-link">Quick Start</a>
+			</div>
+
+			<div class="sidebar-section">
+				<h4>Core API</h4>
+				<a href="#kalm-listen" class="sidebar-link">kalm.listen()</a>
+				<a href="#kalm-connect" class="sidebar-link">kalm.connect()</a>
+			</div>
+
+			<div class="sidebar-section">
+				<h4>Server API</h4>
+				<a href="#server-on" class="sidebar-link">server.on()</a>
+				<a href="#server-broadcast" class="sidebar-link">server.broadcast()</a>
+				<a href="#server-events" class="sidebar-link">Server Events</a>
+			</div>
+
+			<div class="sidebar-section">
+				<h4>Client API</h4>
+				<a href="#client-write" class="sidebar-link">client.write()</a>
+				<a href="#client-subscribe" class="sidebar-link">client.subscribe()</a>
+				<a href="#client-on" class="sidebar-link">client.on()</a>
+				<a href="#client-events" class="sidebar-link">Client Events</a>
+			</div>
+
+			<div class="sidebar-section">
+				<h4>Transport Adapters</h4>
+				<a href="#transport-tcp" class="sidebar-link">TCP</a>
+				<a href="#transport-udp" class="sidebar-link">UDP</a>
+				<a href="#transport-ws" class="sidebar-link">WebSocket</a>
+				<a href="#transport-ipc" class="sidebar-link">IPC</a>
+			</div>
+
+			<div class="sidebar-section">
+				<h4>Buffering Routines</h4>
+				<a href="#routine-realtime" class="sidebar-link">realtime()</a>
+				<a href="#routine-tick" class="sidebar-link">tick()</a>
+				<a href="#routine-dynamic" class="sidebar-link">dynamic()</a>
+			</div>
+
+			<div class="sidebar-section">
+				<h4>Types & Interfaces</h4>
+				<a href="#type-server-config" class="sidebar-link">ServerConfig</a>
+				<a href="#type-client-config" class="sidebar-link">ClientConfig</a>
+				<a href="#type-transport-adapter" class="sidebar-link">TransportAdapter</a>
+				<a href="#type-buffering-routine" class="sidebar-link">BufferingRoutine</a>
+			</div>
+		</aside>
+
+		<!-- Main Content -->
+		<main class="docs-content">
+			<!-- Introduction -->
+			<section id="introduction" class="doc-section">
+				<h1>Kalm API Documentation</h1>
+				<p class="lead">Kalm is a socket optimization library that simplifies real-time communication with intelligent packet batching, multiplexing, and congestion control.</p>
+				<div class="info-box">
+					<span class="info-icon">💡</span>
+					<div>
+						<strong>Key Benefits</strong>
+						<p>Lower resource footprint and better throughput than plain sockets through intelligent packet batching. Works seamlessly in both Node.js and browser environments with zero external dependencies.</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Installation -->
+			<section id="installation" class="doc-section">
+				<h2>Installation</h2>
+				<p>Install Kalm and your preferred transport adapter:</p>
+				<pre class="code-block"><code>npm install kalm
+
+# Choose your transport adapter
+npm install @kalm/tcp   # For TCP connections
+npm install @kalm/udp   # For UDP datagrams
+npm install @kalm/ws    # For WebSocket
+npm install @kalm/ipc   # For IPC</code></pre>
+			</section>
+
+			<!-- Quick Start -->
+			<section id="quick-start" class="doc-section">
+				<h2>Quick Start</h2>
+				<p>Here's a simple example to get you started with a WebSocket chat application:</p>
+				<pre class="code-block"><code>// Server
+const Kalm = require('kalm');
+
+const server = Kalm.listen({
+  port: 9001,
+  adapter: 'ws'
+});
+
+server.on('connection', (client) => {
+  client.subscribe('chat');
+  client.on('message', (data) => {
+    server.broadcast('chat', data);
+  });
+});
+
+// Client
+const client = Kalm.connect({
+  hostname: '0.0.0.0',
+  port: 9001,
+  adapter: 'ws'
+});
+
+client.subscribe('chat');
+client.write('chat', { message: 'Hello!' });</code></pre>
+			</section>
+
+			<!-- Core API -->
+			<section id="kalm-listen" class="doc-section">
+				<h2>kalm.listen()</h2>
+				<p class="method-signature"><code>kalm.listen(config: ServerConfig): Server</code></p>
+				<p>Creates and starts a Kalm server that listens for incoming connections.</p>
+
+				<h3>Parameters</h3>
+				<table class="param-table">
+					<thead>
+						<tr>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>config</code></td>
+							<td><code>ServerConfig</code></td>
+							<td>Server configuration object</td>
+						</tr>
+						<tr>
+							<td><code>config.port</code></td>
+							<td><code>number</code></td>
+							<td>Port number to listen on</td>
+						</tr>
+						<tr>
+							<td><code>config.host</code></td>
+							<td><code>string</code></td>
+							<td>Host address (optional, default: '0.0.0.0')</td>
+						</tr>
+						<tr>
+							<td><code>config.transport</code></td>
+							<td><code>TransportAdapter</code></td>
+							<td>Transport adapter (tcp, udp, ws, ipc)</td>
+						</tr>
+						<tr>
+							<td><code>config.routine</code></td>
+							<td><code>BufferingRoutine</code></td>
+							<td>Buffering strategy (optional)</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3>Returns</h3>
+				<p><code>Server</code> - A Kalm server instance</p>
+
+				<h3>Example</h3>
+				<pre class="code-block"><code>const server = Kalm.listen({
+  port: 3000,
+  host: 'localhost',
+  transport: require('@kalm/tcp'),
+  routine: Kalm.routines.tick({ hz: 30 })
+});</code></pre>
+			</section>
+
+			<section id="kalm-connect" class="doc-section">
+				<h2>kalm.connect()</h2>
+				<p class="method-signature"><code>kalm.connect(config: ClientConfig): Client</code></p>
+				<p>Creates a Kalm client and connects to a server.</p>
+
+				<h3>Parameters</h3>
+				<table class="param-table">
+					<thead>
+						<tr>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>config</code></td>
+							<td><code>ClientConfig</code></td>
+							<td>Client configuration object</td>
+						</tr>
+						<tr>
+							<td><code>config.host</code></td>
+							<td><code>string</code></td>
+							<td>Server hostname or IP address</td>
+						</tr>
+						<tr>
+							<td><code>config.port</code></td>
+							<td><code>number</code></td>
+							<td>Server port number</td>
+						</tr>
+						<tr>
+							<td><code>config.transport</code></td>
+							<td><code>TransportAdapter</code></td>
+							<td>Transport adapter (must match server)</td>
+						</tr>
+						<tr>
+							<td><code>config.routine</code></td>
+							<td><code>BufferingRoutine</code></td>
+							<td>Buffering strategy (optional)</td>
+						</tr>
+						<tr>
+							<td><code>config.socket</code></td>
+							<td><code>any</code></td>
+							<td>Custom socket object (optional)</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3>Returns</h3>
+				<p><code>Client</code> - A Kalm client instance</p>
+
+				<h3>Example</h3>
+				<pre class="code-block"><code>const client = Kalm.connect({
+  host: 'localhost',
+  port: 3000,
+  transport: require('@kalm/tcp'),
+  routine: Kalm.routines.dynamic()
+});</code></pre>
+			</section>
+
+			<!-- Server API -->
+			<section id="server-on" class="doc-section">
+				<h2>server.on()</h2>
+				<p class="method-signature"><code>server.on(event: string, callback: Function): void</code></p>
+				<p>Registers an event listener on the server.</p>
+
+				<h3>Parameters</h3>
+				<table class="param-table">
+					<thead>
+						<tr>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>event</code></td>
+							<td><code>string</code></td>
+							<td>Event name ('connection', 'ready', 'error')</td>
+						</tr>
+						<tr>
+							<td><code>callback</code></td>
+							<td><code>Function</code></td>
+							<td>Event handler function</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3>Example</h3>
+				<pre class="code-block"><code>server.on('connection', (client) => {
+  console.log('Client connected');
+});
+
+server.on('ready', () => {
+  console.log('Server is ready');
+});
+
+server.on('error', (err) => {
+  console.error('Server error:', err);
+});</code></pre>
+			</section>
+
+			<section id="server-broadcast" class="doc-section">
+				<h2>server.broadcast()</h2>
+				<p class="method-signature"><code>server.broadcast(channel: string, data: any): void</code></p>
+				<p>Broadcasts a message to all connected clients subscribed to the specified channel.</p>
+
+				<h3>Parameters</h3>
+				<table class="param-table">
+					<thead>
+						<tr>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>channel</code></td>
+							<td><code>string</code></td>
+							<td>Channel name</td>
+						</tr>
+						<tr>
+							<td><code>data</code></td>
+							<td><code>any</code></td>
+							<td>Data to broadcast (will be serialized)</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3>Example</h3>
+				<pre class="code-block"><code>server.broadcast('updates', {
+  type: 'notification',
+  message: 'Server maintenance in 5 minutes'
+});</code></pre>
+			</section>
+
+			<section id="server-events" class="doc-section">
+				<h2>Server Events</h2>
+				<p>Events emitted by the Kalm server:</p>
+
+				<div class="event-list">
+					<div class="event-item">
+						<h3><code>connection</code></h3>
+						<p><strong>Callback:</strong> <code>(client: Client) => void</code></p>
+						<p>Emitted when a new client connects to the server.</p>
+						<pre class="code-block"><code>server.on('connection', (client) => {
+  console.log('New client connected');
+  client.subscribe('chat');
+});</code></pre>
+					</div>
+
+					<div class="event-item">
+						<h3><code>ready</code></h3>
+						<p><strong>Callback:</strong> <code>() => void</code></p>
+						<p>Emitted when the server is ready and listening for connections.</p>
+						<pre class="code-block"><code>server.on('ready', () => {
+  console.log('Server listening on port 3000');
+});</code></pre>
+					</div>
+
+					<div class="event-item">
+						<h3><code>error</code></h3>
+						<p><strong>Callback:</strong> <code>(error: Error) => void</code></p>
+						<p>Emitted when a server error occurs.</p>
+						<pre class="code-block"><code>server.on('error', (err) => {
+  console.error('Server error:', err);
+});</code></pre>
+					</div>
+				</div>
+			</section>
+
+			<!-- Client API -->
+			<section id="client-write" class="doc-section">
+				<h2>client.write()</h2>
+				<p class="method-signature"><code>client.write(channel: string, data: any): void</code></p>
+				<p>Sends data to the server on the specified channel.</p>
+
+				<h3>Parameters</h3>
+				<table class="param-table">
+					<thead>
+						<tr>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>channel</code></td>
+							<td><code>string</code></td>
+							<td>Channel name</td>
+						</tr>
+						<tr>
+							<td><code>data</code></td>
+							<td><code>any</code></td>
+							<td>Data to send (will be serialized)</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3>Example</h3>
+				<pre class="code-block"><code>client.write('chat', {
+  user: 'John',
+  message: 'Hello World!'
+});</code></pre>
+			</section>
+
+			<section id="client-subscribe" class="doc-section">
+				<h2>client.subscribe()</h2>
+				<p class="method-signature"><code>client.subscribe(channel: string, callback?: Function): void</code></p>
+				<p>Subscribes to a channel to receive messages.</p>
+
+				<h3>Parameters</h3>
+				<table class="param-table">
+					<thead>
+						<tr>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>channel</code></td>
+							<td><code>string</code></td>
+							<td>Channel name to subscribe to</td>
+						</tr>
+						<tr>
+							<td><code>callback</code></td>
+							<td><code>Function</code></td>
+							<td>Optional callback for channel messages</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3>Example</h3>
+				<pre class="code-block"><code>// Subscribe with callback
+client.subscribe('chat', (data) => {
+  console.log('Received:', data);
+});
+
+// Subscribe without callback (use client.on instead)
+client.subscribe('updates');
+client.on('updates', (data) => {
+  console.log('Update:', data);
+});</code></pre>
+			</section>
+
+			<section id="client-on" class="doc-section">
+				<h2>client.on()</h2>
+				<p class="method-signature"><code>client.on(event: string, callback: Function): void</code></p>
+				<p>Registers an event listener on the client.</p>
+
+				<h3>Parameters</h3>
+				<table class="param-table">
+					<thead>
+						<tr>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>event</code></td>
+							<td><code>string</code></td>
+							<td>Event name or channel name</td>
+						</tr>
+						<tr>
+							<td><code>callback</code></td>
+							<td><code>Function</code></td>
+							<td>Event handler function</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3>Example</h3>
+				<pre class="code-block"><code>client.on('connect', () => {
+  console.log('Connected to server');
+});
+
+client.on('chat', (data) => {
+  console.log('Chat message:', data);
+});</code></pre>
+			</section>
+
+			<section id="client-events" class="doc-section">
+				<h2>Client Events</h2>
+				<p>Events emitted by the Kalm client:</p>
+
+				<div class="event-list">
+					<div class="event-item">
+						<h3><code>connect</code></h3>
+						<p><strong>Callback:</strong> <code>() => void</code></p>
+						<p>Emitted when the client successfully connects to the server.</p>
+						<pre class="code-block"><code>client.on('connect', () => {
+  console.log('Successfully connected!');
+});</code></pre>
+					</div>
+
+					<div class="event-item">
+						<h3><code>disconnect</code></h3>
+						<p><strong>Callback:</strong> <code>() => void</code></p>
+						<p>Emitted when the client disconnects from the server.</p>
+						<pre class="code-block"><code>client.on('disconnect', () => {
+  console.log('Disconnected from server');
+});</code></pre>
+					</div>
+
+					<div class="event-item">
+						<h3><code>error</code></h3>
+						<p><strong>Callback:</strong> <code>(error: Error) => void</code></p>
+						<p>Emitted when a client error occurs.</p>
+						<pre class="code-block"><code>client.on('error', (err) => {
+  console.error('Client error:', err);
+});</code></pre>
+					</div>
+
+					<div class="event-item">
+						<h3><code>frame</code></h3>
+						<p><strong>Callback:</strong> <code>(payload: Buffer) => void</code></p>
+						<p>Emitted when a raw frame payload is received.</p>
+						<pre class="code-block"><code>client.on('frame', (payload) => {
+  console.log('Raw payload:', payload);
+});</code></pre>
+					</div>
+				</div>
+			</section>
+
+			<!-- Transport Adapters -->
+			<section id="transport-tcp" class="doc-section">
+				<h2>TCP Transport</h2>
+				<p>TCP (Transmission Control Protocol) adapter for reliable, connection-oriented communication.</p>
+				<pre class="code-block"><code>const tcp = require('@kalm/tcp');
+
+const server = Kalm.listen({
+  port: 3000,
+  transport: tcp
+});</code></pre>
+				<div class="info-box">
+					<span class="info-icon">ℹ️</span>
+					<div>
+						<strong>Best for:</strong> Reliable server-to-server communication, persistent connections
+					</div>
+				</div>
+			</section>
+
+			<section id="transport-udp" class="doc-section">
+				<h2>UDP Transport</h2>
+				<p>UDP (User Datagram Protocol) adapter for fast, connectionless communication.</p>
+				<pre class="code-block"><code>const udp = require('@kalm/udp');
+
+const server = Kalm.listen({
+  port: 3000,
+  transport: udp
+});</code></pre>
+				<div class="info-box">
+					<span class="info-icon">ℹ️</span>
+					<div>
+						<strong>Best for:</strong> Real-time gaming, streaming, scenarios where speed matters more than reliability
+					</div>
+				</div>
+			</section>
+
+			<section id="transport-ws" class="doc-section">
+				<h2>WebSocket Transport</h2>
+				<p>WebSocket adapter for browser-compatible bidirectional communication.</p>
+				<pre class="code-block"><code>const ws = require('@kalm/ws');
+
+const server = Kalm.listen({
+  port: 9001,
+  transport: ws
+});</code></pre>
+				<div class="info-box">
+					<span class="info-icon">ℹ️</span>
+					<div>
+						<strong>Best for:</strong> Browser-based applications, web chat, real-time dashboards
+					</div>
+				</div>
+			</section>
+
+			<section id="transport-ipc" class="doc-section">
+				<h2>IPC Transport</h2>
+				<p>IPC (Inter-Process Communication) adapter for same-machine process communication.</p>
+				<pre class="code-block"><code>const ipc = require('@kalm/ipc');
+
+const server = Kalm.listen({
+  port: '/tmp/kalm.sock',
+  transport: ipc
+});</code></pre>
+				<div class="info-box">
+					<span class="info-icon">ℹ️</span>
+					<div>
+						<strong>Best for:</strong> Microservices on the same machine, worker processes, local communication
+					</div>
+				</div>
+			</section>
+
+			<!-- Buffering Routines -->
+			<section id="routine-realtime" class="doc-section">
+				<h2>realtime()</h2>
+				<p class="method-signature"><code>Kalm.routines.realtime(): BufferingRoutine</code></p>
+				<p>Immediate transmission with minimal latency. Messages are sent as soon as they are written.</p>
+				<pre class="code-block"><code>const client = Kalm.connect({
+  host: 'localhost',
+  port: 3000,
+  transport: tcp,
+  routine: Kalm.routines.realtime()
+});</code></pre>
+				<div class="info-box">
+					<span class="info-icon">⚡</span>
+					<div>
+						<strong>Use when:</strong> Latency is critical and message volume is low
+					</div>
+				</div>
+			</section>
+
+			<section id="routine-tick" class="doc-section">
+				<h2>tick()</h2>
+				<p class="method-signature"><code>Kalm.routines.tick({ hz: number }): BufferingRoutine</code></p>
+				<p>Fixed-frequency dispatch. Batches messages and sends them at regular intervals.</p>
+
+				<h3>Parameters</h3>
+				<table class="param-table">
+					<thead>
+						<tr>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>hz</code></td>
+							<td><code>number</code></td>
+							<td>Frequency in Hz (e.g., 5 Hz = 200ms intervals)</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3>Example</h3>
+				<pre class="code-block"><code>const client = Kalm.connect({
+  host: 'localhost',
+  port: 3000,
+  transport: tcp,
+  routine: Kalm.routines.tick({ hz: 30 }) // 30 times per second
+});</code></pre>
+				<div class="info-box">
+					<span class="info-icon">🎯</span>
+					<div>
+						<strong>Use when:</strong> Consistent timing is important, like game state updates
+					</div>
+				</div>
+			</section>
+
+			<section id="routine-dynamic" class="doc-section">
+				<h2>dynamic()</h2>
+				<p class="method-signature"><code>Kalm.routines.dynamic(): BufferingRoutine</code></p>
+				<p>Adaptive buffering based on traffic patterns. Automatically adjusts batching strategy.</p>
+				<pre class="code-block"><code>const client = Kalm.connect({
+  host: 'localhost',
+  port: 3000,
+  transport: tcp,
+  routine: Kalm.routines.dynamic()
+});</code></pre>
+				<div class="info-box">
+					<span class="info-icon">🤖</span>
+					<div>
+						<strong>Use when:</strong> Traffic patterns vary or you want automatic optimization
+					</div>
+				</div>
+			</section>
+
+			<!-- Types & Interfaces -->
+			<section id="type-server-config" class="doc-section">
+				<h2>ServerConfig</h2>
+				<p>Configuration object for creating a Kalm server.</p>
+				<pre class="code-block"><code>interface ServerConfig {
+  port: number;              // Port to listen on
+  host?: string;             // Host address (default: '0.0.0.0')
+  transport: TransportAdapter;  // Transport adapter
+  routine?: BufferingRoutine;   // Buffering strategy (optional)
+}</code></pre>
+			</section>
+
+			<section id="type-client-config" class="doc-section">
+				<h2>ClientConfig</h2>
+				<p>Configuration object for creating a Kalm client.</p>
+				<pre class="code-block"><code>interface ClientConfig {
+  host: string;              // Server hostname or IP
+  port: number;              // Server port
+  transport: TransportAdapter;  // Transport adapter
+  routine?: BufferingRoutine;   // Buffering strategy (optional)
+  socket?: any;              // Custom socket object (optional)
+}</code></pre>
+			</section>
+
+			<section id="type-transport-adapter" class="doc-section">
+				<h2>TransportAdapter</h2>
+				<p>Transport adapter for different protocols. Available adapters:</p>
+				<ul>
+					<li><code>@kalm/tcp</code> - TCP socket connections</li>
+					<li><code>@kalm/udp</code> - UDP datagram protocol</li>
+					<li><code>@kalm/ws</code> - WebSocket support</li>
+					<li><code>@kalm/ipc</code> - Inter-process communication</li>
+				</ul>
+			</section>
+
+			<section id="type-buffering-routine" class="doc-section">
+				<h2>BufferingRoutine</h2>
+				<p>Buffering strategy for packet batching. Available routines:</p>
+				<ul>
+					<li><code>Kalm.routines.realtime()</code> - Immediate transmission</li>
+					<li><code>Kalm.routines.tick({ hz })</code> - Fixed-frequency dispatch</li>
+					<li><code>Kalm.routines.dynamic()</code> - Adaptive buffering</li>
+				</ul>
+			</section>
+		</main>
+	</div>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="footer-content">
+			<p>&copy; 2025 Kalm. Open source socket optimization.</p>
+			<div class="footer-links">
+				<a href="https://github.com/kalm/kalm.js">GitHub</a>
+				<a href="https://github.com/kalm/kalm.js#install">Install</a>
+				<a href="https://github.com/kalm/kalm.js/tree/master/examples">Examples</a>
+			</div>
+		</div>
+	</footer>
+
+	<script src="docs.js"></script>
+</body>
+
+</html>

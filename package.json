@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/kalm/website/issues"
   },
-  "homepage": "https://github.com/kalm/website#readme"
+  "homepage": "https://github.com/kalm/website#readme",
+  "dependencies": {
+    "@kalm/ws": "8.0.0",
+    "kalm": "^8.1.0"
+  }
 }

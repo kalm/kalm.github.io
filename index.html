@@ -1,67 +1,198 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
 
 <head>
-	<title>Kalm - The socket manager</title>
+	<title>Kalm - The Socket Optimizer</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
-	<style>
-		html,
-		body {
-			height: 100%;
-		}
-
-		body {
-			display: flex;
-			align-items: center;
-		}
-
-		a.github-link {
-			padding-left: 2.5rem;
-		}
-
-		a.github-link>.github-icon {
-			position: absolute;
-			left: 0.4em;
-			top: 0.65em;
-			width: 2em;
-		}
-
-		.noselect {
-			user-select: none;
-		}
-	</style>
+	<meta name="color-scheme" content="light dark">
+	<link rel="stylesheet" href="style.css">
 </head>
 
-<body class="mh2-m">
-	<main class="sans-serif w-100 mw6 center pv2-m">
-		<div class="tc bb bw1 b--light-gray">
-			<img src="/images/kalmv3.png" alt="kalm logo" style="width:250px;height:250px;" />
-			<h1 class="fw3 mt2 mb3">Kalm</h1>
-			<h2 class="fw3 mt0">The Socket Optimizer</h2>
+<body>
+	<!-- Top Navigation -->
+	<nav class="top-nav">
+		<div class="nav-container">
+			<div class="nav-logo">
+				<img src="/images/kalmv3.png" alt="kalm logo" />
+				<span>Kalm</span>
+			</div>
+			<div class="nav-links">
+				<a href="#home" class="nav-link active">Home</a>
+				<a href="docs.html" class="nav-link">Documentation</a>
+				<a href="https://github.com/kalm/kalm.js/tree/master/examples" target="_blank" class="nav-link">Examples</a>
+				<a href="https://github.com/kalm/kalm.js" target="_blank" class="nav-link">
+					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="github-icon">
+						<path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+					</svg>
+					GitHub
+				</a>
+			</div>
+			<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+				<svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<circle cx="12" cy="12" r="5"/>
+					<line x1="12" y1="1" x2="12" y2="3"/>
+					<line x1="12" y1="21" x2="12" y2="23"/>
+					<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+					<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+					<line x1="1" y1="12" x2="3" y2="12"/>
+					<line x1="21" y1="12" x2="23" y2="12"/>
+					<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+					<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+				</svg>
+				<svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+				</svg>
+			</button>
 		</div>
-		<div class="tc">
-			<a class="f6 link dim br2 ba pr3 pv3 dib mid-gray relative github-link" href="https://github.com/kalm/kalm.js" style="margin-top:1rem;">
-				<svg aria-labelledby="simpleicons-github-dark-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="github-icon">
-					<title id="simpleicons-github-icon" lang="en">
-						GitHub Dark icon
-					</title>
-					<path fill="rgba(0,0,0,.8)" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+	</nav>
+
+	<!-- Hero Section -->
+	<header class="hero">
+		<div class="hero-content">
+			<h1 class="hero-title">
+				<span class="gradient-text">Kalm</span>
+			</h1>
+			<p class="hero-subtitle">The Socket Optimizer</p>
+			<p class="hero-description">
+				Simplify and optimize socket communication with multiplexing, congestion control,
+				and support for all major protocols. Works seamlessly in browser and Node.js.
+			</p>
+		</div>
+		<div class="hero-animation">
+			<div class="pulse-ring"></div>
+			<div class="pulse-ring delay-1"></div>
+			<div class="pulse-ring delay-2"></div>
+		</div>
+	</header>
+
+	<!-- Split Layout: Code Example + Live Chat -->
+	<section class="split-section">
+		<div class="split-container">
+			<!-- Left: Code Example -->
+			<div class="code-panel">
+				<div class="panel-header">
+					<h3>Quick Start Example</h3>
+					<div class="language-badge">JavaScript</div>
+				</div>
+				<pre class="code-block"><code>// Server
+const Kalm = require('kalm');
+
+const server = Kalm.listen({
+  port: 9001,
+  adapter: 'ws'
+});
+
+server.on('connection', (client) => {
+  client.subscribe('chat');
+
+  client.on('message', (data) => {
+    // Broadcast to all clients
+    server.broadcast('chat', data);
+  });
+});
+
+// Client
+const client = Kalm.connect({
+  hostname: '0.0.0.0',
+  port: 9001,
+  adapter: 'ws'
+});
+
+client.subscribe('chat');
+
+client.write('chat', {
+  user: 'User',
+  message: 'Hello World!'
+});
+
+client.on('chat', (data) => {
+  console.log(data.user + ': ' + data.message);
+});</code></pre>
+				<div class="features-grid">
+					<div class="feature-card">
+						<div class="feature-icon">⚡</div>
+						<h4>Multiplexing</h4>
+						<p>Handle multiple channels over a single connection</p>
+					</div>
+					<div class="feature-card">
+						<div class="feature-icon">🎯</div>
+						<h4>Congestion Control</h4>
+						<p>Smart throttling and backpressure handling</p>
+					</div>
+					<div class="feature-card">
+						<div class="feature-icon">🔌</div>
+						<h4>Protocol Agnostic</h4>
+						<p>Works with TCP, UDP, WebSocket, IPC</p>
+					</div>
+					<div class="feature-card">
+						<div class="feature-icon">🌐</div>
+						<h4>Universal</h4>
+						<p>Same API for browser and Node.js</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Right: Live Chat -->
+			<div class="chat-panel">
+				<div class="panel-header">
+					<h3>Live Chat Demo</h3>
+					<div class="connection-status" id="connectionStatus">
+						<span class="status-dot"></span>
+						<span class="status-text">Disconnected</span>
+					</div>
+				</div>
+				<div class="chat-messages" id="chatMessages">
+					<div class="system-message">
+						<span class="message-icon">ℹ️</span>
+						<span>Welcome to Kalm live chat! Connect to the server to start messaging.</span>
+					</div>
+				</div>
+				<div class="chat-input-container">
+					<input
+						type="text"
+						id="usernameInput"
+						class="username-input"
+						placeholder="Your name"
+						value="Anonymous"
 					/>
-				</svg>Github
-			</a>
+					<div class="message-input-wrapper">
+						<input
+							type="text"
+							id="messageInput"
+							class="message-input"
+							placeholder="Type a message..."
+							disabled
+						/>
+						<button id="sendButton" class="send-button" disabled>
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<line x1="22" y1="2" x2="11" y2="13"/>
+								<polygon points="22 2 15 22 11 13 2 9 22 2"/>
+							</svg>
+						</button>
+					</div>
+					<button id="connectButton" class="connect-button">Connect to Server</button>
+				</div>
+			</div>
 		</div>
-		<h3>What is Kalm?</h3>
-		<p class="mb3 f5 lh-copy measure tl">
-			Kalm is a tiny library that will simplify and optimize socket communication in your projects.
-			It supports most protocols, features multiplexing, congestion control and it works in the browser and in node just the same!
-		</p>
-		<h3>Getting started</h3>
-		<p class="mb3 f5 lh-copy measure tl">
-			<a href="https://github.com/kalm/kalm.js#install">Install</a> Kalm in your project, then look at our <a href="https://github.com/kalm/kalm.js/tree/master/examples">sample</a> applications.
-		</p>
-	</main>
+	</section>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="footer-content">
+			<p>&copy; 2025 Kalm. Open source socket optimization.</p>
+			<div class="footer-links">
+				<a href="https://github.com/kalm/kalm.js">GitHub</a>
+				<a href="https://github.com/kalm/kalm.js#install">Install</a>
+				<a href="https://github.com/kalm/kalm.js/tree/master/examples">Examples</a>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Kalm Framework -->
+	<script src="https://unpkg.com/kalm@latest/dist/kalm.js"></script>
+	<script src="https://unpkg.com/@kalm/ws@latest/dist/ws.js"></script>
+	<script src="kalm-chat.js"></script>
 </body>
 
 </html>
