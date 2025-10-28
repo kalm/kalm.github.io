@@ -138,6 +138,7 @@ npm install @kalm/ipc   # For IPC</code></pre>
 				<p>Here's a simple example to get you started with a WebSocket chat application:</p>
 				<pre class="code-block"><code>// Server
 const Kalm = require('kalm');
+const ws = require('@kalm/ws');
 
 const server = Kalm.listen({
   port: 9001,
@@ -145,8 +146,7 @@ const server = Kalm.listen({
 });
 
 server.on('connection', (client) => {
-  client.subscribe('chat');
-  client.on('message', (data) => {
+  client.subscribe('chat', (data) => {
     server.broadcast('chat', data);
   });
 });
@@ -158,8 +158,13 @@ const client = Kalm.connect({
   transport: ws(),
 });
 
-client.subscribe('chat');
-client.write('chat', { message: 'Hello!' });</code></pre>
+client.on('connect', () => {
+  client.subscribe('chat', (data) => {
+    console.log('Received:', data);
+  });
+
+  client.write('chat', { message: 'Hello!' });
+});</code></pre>
 			</section>
 
 			<!-- Core API -->
@@ -367,7 +372,6 @@ server.on('error', (err) => {
 						<p>Emitted when a new client connects to the server.</p>
 						<pre class="code-block"><code>server.on('connection', (client) => {
   console.log('New client connected');
-  client.subscribe('chat');
 });</code></pre>
 					</div>
 
@@ -429,7 +433,7 @@ server.on('error', (err) => {
 
 			<section id="client-subscribe" class="doc-section">
 				<h2>client.subscribe()</h2>
-				<p class="method-signature"><code>client.subscribe(channel: string, callback?: Function): void</code></p>
+				<p class="method-signature"><code>client.subscribe(channel: string, callback: Function): void</code></p>
 				<p>Subscribes to a channel to receive messages.</p>
 
 				<h3>Parameters</h3>
@@ -450,22 +454,18 @@ server.on('error', (err) => {
 						<tr>
 							<td><code>callback</code></td>
 							<td><code>Function</code></td>
-							<td>Optional callback for channel messages</td>
+							<td>Callback for channel messages</td>
 						</tr>
 					</tbody>
 				</table>
 
 				<h3>Example</h3>
-				<pre class="code-block"><code>// Subscribe with callback
+				<pre class="code-block"><code>
 client.subscribe('chat', (data) => {
   console.log('Received:', data);
 });
 
-// Subscribe without callback (use client.on instead)
-client.subscribe('updates');
-client.on('updates', (data) => {
-  console.log('Update:', data);
-});</code></pre>
+</code></pre>
 			</section>
 
 			<section id="client-on" class="doc-section">
@@ -486,7 +486,7 @@ client.on('updates', (data) => {
 						<tr>
 							<td><code>event</code></td>
 							<td><code>string</code></td>
-							<td>Event name or channel name</td>
+							<td>Event name ('connect', 'disconnect', 'error', 'frame')</td>
 						</tr>
 						<tr>
 							<td><code>callback</code></td>
@@ -501,7 +501,7 @@ client.on('updates', (data) => {
   console.log('Connected to server');
 });
 
-client.on('chat', (data) => {
+client.subscribe('chat', (data) => {
   console.log('Chat message:', data);
 });</code></pre>
 			</section>

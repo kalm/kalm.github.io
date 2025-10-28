@@ -85,9 +85,7 @@ const server = Kalm.listen({
 });
 
 server.on('connection', (client) => {
-  client.subscribe('chat');
-
-  client.on('message', (data) => {
+  client.subscribe('chat', (data) => {
     // Broadcast to all clients
     server.broadcast('chat', data);
   });
@@ -100,16 +98,18 @@ const client = Kalm.connect({
   transport: ws(),
 });
 
-client.subscribe('chat');
+client.on('connect', () => {
+  client.subscribe('chat', (data) => {
+    console.log(data.user + ': ' + data.message);
+  });
 
-client.write('chat', {
-  user: 'User',
-  message: 'Hello World!',
+  client.write('chat', {
+    user: 'User',
+    message: 'Hello World!',
+  });
 });
 
-client.on('chat', (data) => {
-  console.log(data.user + ': ' + data.message);
-});</code></pre>
+</code></pre>
 				<div class="features-grid">
 					<div class="feature-card">
 						<div class="feature-icon">⚡</div>
@@ -172,6 +172,10 @@ client.on('chat', (data) => {
 						</button>
 					</div>
 					<button id="connectButton" class="connect-button">Connect to Server</button>
+					<div class="chat-disclaimer">
+						<span class="disclaimer-icon">ℹ️</span>
+						<p>Messages are delivered in real-time and are not stored. This is a live demo showcasing Kalm's WebSocket capabilities.</p>
+					</div>
 				</div>
 			</div>
 		</div>

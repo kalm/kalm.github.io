@@ -8,6 +8,12 @@
 }
 
 :root {
+	/* Kalm Logo Colors */
+	--kalm-gray: #d9d9d9;
+	--kalm-green: #46d77a;
+	--kalm-blue: #4baae4;
+	--kalm-dark: #303c48;
+
 	/* Light mode colors */
 	--bg-primary: #ffffff;
 	--bg-secondary: #f8f9fa;
@@ -16,16 +22,16 @@
 	--text-secondary: #4a5568;
 	--text-tertiary: #718096;
 	--border-color: #e2e8f0;
-	--accent-primary: #6366f1;
-	--accent-secondary: #8b5cf6;
-	--accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-	--success: #10b981;
+	--accent-primary: #4baae4;
+	--accent-secondary: #46d77a;
+	--accent-gradient: linear-gradient(135deg, #4baae4 0%, #46d77a 100%);
+	--success: #46d77a;
 	--error: #ef4444;
 	--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
 	--shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
 	--shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
 	--shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
-	--glow: 0 0 20px rgba(99, 102, 241, 0.3);
+	--glow: 0 0 20px rgba(75, 170, 228, 0.3);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,11 +43,14 @@
 		--text-secondary: #cbd5e1;
 		--text-tertiary: #94a3b8;
 		--border-color: #334155;
+		--accent-primary: #4baae4;
+		--accent-secondary: #46d77a;
+		--accent-gradient: linear-gradient(135deg, #4baae4 0%, #46d77a 100%);
 		--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
 		--shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
 		--shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
 		--shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.4);
-		--glow: 0 0 30px rgba(99, 102, 241, 0.5);
+		--glow: 0 0 30px rgba(75, 170, 228, 0.5);
 	}
 }
 
@@ -53,13 +62,16 @@ body.light-mode {
 	--text-secondary: #4a5568;
 	--text-tertiary: #718096;
 	--border-color: #e2e8f0;
-	--success: #10b981;
+	--accent-primary: #4baae4;
+	--accent-secondary: #46d77a;
+	--accent-gradient: linear-gradient(135deg, #4baae4 0%, #46d77a 100%);
+	--success: #46d77a;
 	--error: #ef4444;
 	--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
 	--shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
 	--shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
 	--shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
-	--glow: 0 0 20px rgba(99, 102, 241, 0.3);
+	--glow: 0 0 20px rgba(75, 170, 228, 0.3);
 }
 
 body.dark-mode {
@@ -70,11 +82,14 @@ body.dark-mode {
 	--text-secondary: #cbd5e1;
 	--text-tertiary: #94a3b8;
 	--border-color: #334155;
+	--accent-primary: #4baae4;
+	--accent-secondary: #46d77a;
+	--accent-gradient: linear-gradient(135deg, #4baae4 0%, #46d77a 100%);
 	--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
 	--shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
 	--shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
 	--shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.4);
-	--glow: 0 0 30px rgba(99, 102, 241, 0.5);
+	--glow: 0 0 30px rgba(75, 170, 228, 0.5);
 }
 
 html {
@@ -320,7 +335,7 @@ body.dark-mode .moon-icon {
 .pulse-ring {
 	width: 300px;
 	height: 300px;
-	border: 2px solid var(--accent-primary);
+	border: 2px solid var(--kalm-blue);
 	border-radius: 50%;
 	position: absolute;
 	top: 50%;
@@ -332,10 +347,12 @@ body.dark-mode .moon-icon {
 
 .pulse-ring.delay-1 {
 	animation-delay: 1s;
+	border-color: var(--kalm-green);
 }
 
 .pulse-ring.delay-2 {
 	animation-delay: 2s;
+	border-color: var(--kalm-blue);
 }
 
 @keyframes pulse {
@@ -667,6 +684,31 @@ body.dark-mode .moon-icon {
 
 .connect-button.connected {
 	background: var(--error);
+}
+
+/* Chat Disclaimer */
+.chat-disclaimer {
+	display: flex;
+	align-items: start;
+	gap: 0.5rem;
+	padding: 0.75rem;
+	background: var(--bg-tertiary);
+	border-radius: 6px;
+	margin-top: 0.75rem;
+	border-left: 3px solid var(--accent-primary);
+}
+
+.disclaimer-icon {
+	font-size: 1rem;
+	flex-shrink: 0;
+	margin-top: 0.125rem;
+}
+
+.chat-disclaimer p {
+	margin: 0;
+	font-size: 0.75rem;
+	line-height: 1.4;
+	color: var(--text-tertiary);
 }
 
 /* Connection Status */
