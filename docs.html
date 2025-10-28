@@ -141,7 +141,7 @@ const Kalm = require('kalm');
 
 const server = Kalm.listen({
   port: 9001,
-  adapter: 'ws'
+  transport: ws(),
 });
 
 server.on('connection', (client) => {
@@ -155,7 +155,7 @@ server.on('connection', (client) => {
 const client = Kalm.connect({
   host: '0.0.0.0',
   port: 9001,
-  adapter: 'ws'
+  transport: ws(),
 });
 
 client.subscribe('chat');
@@ -213,7 +213,7 @@ client.write('chat', { message: 'Hello!' });</code></pre>
 				<pre class="code-block"><code>const server = Kalm.listen({
   port: 3000,
   host: 'localhost',
-  transport: require('@kalm/tcp'),
+  transport: ws(),
   routine: Kalm.routines.tick({ hz: 30 })
 });</code></pre>
 			</section>
@@ -273,7 +273,7 @@ client.write('chat', { message: 'Hello!' });</code></pre>
 				<pre class="code-block"><code>const client = Kalm.connect({
   host: 'localhost',
   port: 3000,
-  transport: require('@kalm/tcp'),
+  transport: ws(),
   routine: Kalm.routines.dynamic()
 });</code></pre>
 			</section>
@@ -557,7 +557,7 @@ client.on('chat', (data) => {
 
 const server = Kalm.listen({
   port: 3000,
-  transport: tcp
+  transport: tcp()
 });</code></pre>
 				<div class="info-box">
 					<span class="info-icon">ℹ️</span>
@@ -574,7 +574,7 @@ const server = Kalm.listen({
 
 const server = Kalm.listen({
   port: 3000,
-  transport: udp
+  transport: udp()
 });</code></pre>
 				<div class="info-box">
 					<span class="info-icon">ℹ️</span>
@@ -591,7 +591,7 @@ const server = Kalm.listen({
 
 const server = Kalm.listen({
   port: 9001,
-  transport: ws
+  transport: ws()
 });</code></pre>
 				<div class="info-box">
 					<span class="info-icon">ℹ️</span>
@@ -608,7 +608,7 @@ const server = Kalm.listen({
 
 const server = Kalm.listen({
   port: '/tmp/kalm.sock',
-  transport: ipc
+  transport: ipc()
 });</code></pre>
 				<div class="info-box">
 					<span class="info-icon">ℹ️</span>
@@ -626,7 +626,7 @@ const server = Kalm.listen({
 				<pre class="code-block"><code>const client = Kalm.connect({
   host: 'localhost',
   port: 3000,
-  transport: tcp,
+  transport: tcp(),
   routine: Kalm.routines.realtime()
 });</code></pre>
 				<div class="info-box">
@@ -664,7 +664,7 @@ const server = Kalm.listen({
 				<pre class="code-block"><code>const client = Kalm.connect({
   host: 'localhost',
   port: 3000,
-  transport: tcp,
+  transport: tcp(),
   routine: Kalm.routines.tick({ hz: 30 }) // 30 times per second
 });</code></pre>
 				<div class="info-box">
@@ -682,7 +682,7 @@ const server = Kalm.listen({
 				<pre class="code-block"><code>const client = Kalm.connect({
   host: 'localhost',
   port: 3000,
-  transport: tcp,
+  transport: tcp(),
   routine: Kalm.routines.dynamic()
 });</code></pre>
 				<div class="info-box">

@@ -77,10 +77,11 @@
 				</div>
 				<pre class="code-block"><code>// Server
 const Kalm = require('kalm');
+const ws = require('@kalm/ws');
 
 const server = Kalm.listen({
   port: 9001,
-  adapter: 'ws'
+  transport: ws(),
 });
 
 server.on('connection', (client) => {
@@ -96,14 +97,14 @@ server.on('connection', (client) => {
 const client = Kalm.connect({
   host: '0.0.0.0',
   port: 9001,
-  adapter: 'ws'
+  transport: ws(),
 });
 
 client.subscribe('chat');
 
 client.write('chat', {
   user: 'User',
-  message: 'Hello World!'
+  message: 'Hello World!',
 });
 
 client.on('chat', (data) => {
