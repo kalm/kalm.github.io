@@ -16,7 +16,7 @@ const Kalm = require('kalm');
 const ws = require('@kalm/ws');
 
 // Configuration
-const PORT = 9001;
+const PORT = process.env.PORT || 9001;
 const HOST = 'kalm-github-io.onrender.com';
 const CHANNEL = 'chat';
 
