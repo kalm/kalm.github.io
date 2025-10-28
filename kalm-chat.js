@@ -138,7 +138,7 @@
 			client = kalm.connect({
 				host: KALM_SERVER_HOST,
 				port: KALM_SERVER_PORT,
-				transport: ws({ cert: 1, key: 1 }),
+				transport: ws({ cert: 1, key: 1, socketTimeout: 1000 * 60 * 15 }),
 			});
 
 			// Set up event handlers
