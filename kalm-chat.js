@@ -9,7 +9,7 @@
 	// Configuration
 	const KALM_SERVER_HOST = 'kalm-github-io.onrender.com';
 	// const KALM_SERVER_HOST = '0.0.0.0';  // Local debug
-	const KALM_SERVER_PORT = 9001;
+	const KALM_SERVER_PORT = 443;
 	const CHANNEL = 'chat';
 
 	// State
