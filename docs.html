@@ -6,6 +6,33 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="color-scheme" content="light dark">
+
+	<meta name="description" content="Complete API documentation for Kalm - the socket optimizer. Learn about transports, adapters, serialization, encoding, and more.">
+	<meta name="keywords" content="Kalm API, Kalm documentation, socket API, WebSocket API, TCP API, UDP API, multiplexing API, buffering routines">
+	<meta name="author" content="Kalm">
+	<meta name="robots" content="index, follow">
+	<link rel="canonical" href="https://kalm.js.org/docs.html">
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://kalm.js.org/docs.html">
+	<meta property="og:title" content="Kalm - API Documentation">
+	<meta property="og:description" content="Complete API documentation for Kalm - the socket optimizer. Learn about transports, adapters, serialization, encoding, and more.">
+	<meta property="og:image" content="https://kalm.js.org/images/kalmv3.png">
+
+	<!-- Inline theme script to prevent flash of incorrect theme -->
+	<script>
+		(function() {
+			const savedTheme = localStorage.getItem('theme');
+			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+			if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+				document.documentElement.classList.add('dark-mode');
+			} else if (savedTheme === 'light') {
+				document.documentElement.classList.add('light-mode', 'light-mode-set');
+			}
+		})();
+	</script>
+
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="docs.css">
 </head>
@@ -14,6 +41,11 @@
 	<!-- Top Navigation -->
 	<nav class="top-nav">
 		<div class="nav-container">
+			<button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
 			<a href="https://kalm.js.org" class="nav-logo">
 				<img src="/images/kalmv3.png" alt="kalm logo" />
 				<span>Kalm</span>
@@ -843,6 +875,35 @@ const server = Kalm.listen({
 	</footer>
 
 	<script src="docs.js"></script>
+
+	<!-- Mobile Menu Toggle -->
+	<script>
+		const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+		const navLinks = document.querySelector('.nav-links');
+
+		if (mobileMenuToggle) {
+			mobileMenuToggle.addEventListener('click', () => {
+				mobileMenuToggle.classList.toggle('active');
+				navLinks.classList.toggle('active');
+			});
+
+			// Close menu when clicking a link
+			document.querySelectorAll('.nav-link').forEach(link => {
+				link.addEventListener('click', () => {
+					mobileMenuToggle.classList.remove('active');
+					navLinks.classList.remove('active');
+				});
+			});
+
+			// Close menu when clicking outside
+			document.addEventListener('click', (e) => {
+				if (!e.target.closest('.nav-container')) {
+					mobileMenuToggle.classList.remove('active');
+					navLinks.classList.remove('active');
+				}
+			});
+		}
+	</script>
 </body>
 
 </html>

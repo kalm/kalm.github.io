@@ -6,6 +6,33 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="color-scheme" content="light dark">
+
+	<meta name="description" content="Simplify and optimize socket communication with multiplexing, congestion control, and support for all major protocols. Works seamlessly in browser and Node.js.">
+	<meta name="keywords" content="socket, websocket, optimization, multiplexing, congestion control, TCP, UDP, IPC, Node.js, JavaScript, real-time communication">
+	<meta name="author" content="Kalm">
+	<meta name="robots" content="index, follow">
+	<link rel="canonical" href="https://kalm.js.org/">
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://kalm.js.org/">
+	<meta property="og:title" content="Kalm - The Socket Optimizer">
+	<meta property="og:description" content="Simplify and optimize socket communication with multiplexing, congestion control, and support for all major protocols. Works seamlessly in browser and Node.js.">
+	<meta property="og:image" content="https://kalm.js.org/images/kalmv3.png">
+
+	<!-- Inline theme script to prevent flash of incorrect theme -->
+	<script>
+		(function() {
+			const savedTheme = localStorage.getItem('theme');
+			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+			if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+				document.documentElement.classList.add('dark-mode');
+			} else if (savedTheme === 'light') {
+				document.documentElement.classList.add('light-mode', 'light-mode-set');
+			}
+		})();
+	</script>
+
 	<link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,6 +40,11 @@
 	<!-- Top Navigation -->
 	<nav class="top-nav">
 		<div class="nav-container">
+			<button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
 			<a href="https://kalm.js.org" class="nav-logo">
 				<img src="/images/kalmv3.png" alt="kalm logo" />
 				<span>Kalm</span>
@@ -164,7 +196,7 @@ client.on('connect', () => {
 							placeholder="Type a message..."
 							disabled
 						/>
-						<button id="sendButton" class="send-button" disabled>
+						<button id="sendButton" class="send-button" aria-label="Send" disabled>
 							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 								<line x1="22" y1="2" x2="11" y2="13"/>
 								<polygon points="22 2 15 22 11 13 2 9 22 2"/>
@@ -197,6 +229,35 @@ client.on('connect', () => {
 	<script src="https://unpkg.com/kalm@latest/dist/kalm.js"></script>
 	<script src="https://unpkg.com/@kalm/ws@latest/dist/ws.js"></script>
 	<script src="kalm-chat.js"></script>
+
+	<!-- Mobile Menu Toggle -->
+	<script>
+		const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+		const navLinks = document.querySelector('.nav-links');
+
+		if (mobileMenuToggle) {
+			mobileMenuToggle.addEventListener('click', () => {
+				mobileMenuToggle.classList.toggle('active');
+				navLinks.classList.toggle('active');
+			});
+
+			// Close menu when clicking a link
+			document.querySelectorAll('.nav-link').forEach(link => {
+				link.addEventListener('click', () => {
+					mobileMenuToggle.classList.remove('active');
+					navLinks.classList.remove('active');
+				});
+			});
+
+			// Close menu when clicking outside
+			document.addEventListener('click', (e) => {
+				if (!e.target.closest('.nav-container')) {
+					mobileMenuToggle.classList.remove('active');
+					navLinks.classList.remove('active');
+				}
+			});
+		}
+	</script>
 </body>
 
 </html>
